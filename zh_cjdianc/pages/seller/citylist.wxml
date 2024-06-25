@@ -1,0 +1,16 @@
+   <form bindsubmit="formSubmit" bindreset="formReset">
+       <view class='c-right'>
+         <text class="iconfont icon-search"></text>
+         <input style='padding-left:8rpx;' placeholder='输入城市名称查询'  name="input" bindinput='formName'></input>
+       </view>
+   </form>
+
+<view class='current'>
+  <view class='currentcity'>当前城市</view>
+  <button class='cacherecord'>杭州市{{Cacherecord}}</button>
+</view>
+
+<view style='padding-top:30rpx;'>
+  <view class='select'>A</view>
+  <button class='area'><text style='float:left;'>安徽省</text></button>
+</view>

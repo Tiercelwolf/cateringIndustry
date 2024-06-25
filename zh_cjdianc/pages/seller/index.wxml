@@ -1,0 +1,163 @@
+<view class="gif"  wx:if="{{isloading}}" >
+    <image src="../../img/hungry2.gif"></image>
+</view>
+
+<view wx:if="{{!isloading}}">
+<include src="/zh_cjdianc/pages/commons/navbar/navbar.wxml"></include>
+<!-- 三大主页面 -->
+<view class="navbar flex-row" style="border:1rpx solid #d5d5d5" wx:if="{{xtxx.model=='0'}}">
+    <navigator class="flex-grow-1 flex-y-center" openType="reLaunch" url="{{item.url}}" wx:for="{{arr}}">
+        <view>
+            <image class="navbar-icon" src="{{item.logo2}}"></image>
+            <view class="navbar-text" style="color: {{item.title_color}};">{{item.title}}
+          </view>
+        </view>
+    </navigator>
+</view>
+
+<view class="main">
+    <!-- 这是轮播图 -->
+    <view class="one">
+        <swiper autoplay='true' indicator-dots="true" circular='true'>
+            <swiper-item wx:for="{{oneTwo.banner}}" wx:key="*this">
+                <image src='{{item}}' ></image>
+            </swiper-item>
+        </swiper> 
+    </view>
+    <!-- 这是信息展示 -->
+    <view class='two'>
+      <view class='time'>
+        <view class='two-one'>{{oneTwo.name}}</view>
+        <view wx:if="{{singlestore == '1'}}"  class='ti-last' bindtap='changemd'>
+           切换门店
+        </view>
+      </view>
+       <view class='ti-frist'>营业时间:{{oneTwo.starttime1}}-{{oneTwo.endtime1}}
+         <text>{{oneTwo.starttime2}}-{{oneTwo.endtime2}}</text>
+       </view>
+        <view class='two-two'>{{oneTwo.address}}</view>   
+    </view>
+
+    <!-- 这是接口 -->
+    <view class='three' >
+        <view bindtap='phone'>
+          <i class="iconfont icon-weibiaoti-"></i>
+          <text data-tel='{{store_info.tel}}'>拨打电话</text>
+        </view>
+
+        <view class='shu'>
+        |
+        </view>
+
+        <view bindtap='location'>
+          <i class="iconfont icon-location"></i>
+          <text>查看定位</text>
+        </view>
+
+        <view class='shu'>
+        |
+        </view>
+
+        <view bindtap='connectWifi'>
+          <i class="iconfont icon-WIFI"></i>
+          <text>连接wifi</text>
+        </view>
+    </view>
+
+    <!-- 这是图片 -->
+  <view class='img'>
+     <view>
+       <view><image bindtap="gopre" src='../../img/yd.png' mode='scaleToFill'></image></view>
+       <view style='text-align:center;'>预定</view>
+     </view>
+
+      <view>
+       <view><image src="../../img/sm.png" bindtap='scan'></image></view>
+       <view style='text-align:center;'>点餐</view>
+      </view>
+
+      <view>
+       <view><image src="../../img/wm.png" bindtap='go'></image></view>
+       <view style='text-align:center;'>外卖</view>
+      </view>    
+
+      <view>
+       <view><image src="../../img/pl.png" bindtap='gopl'></image></view>
+       <view style='text-align:center;'>评论</view>
+      </view>
+      
+    </view>
+     
+     <!-- 优惠券 -->
+    <swiper class="coupon" circular='true'>
+      <swiper-item wx:for="{{coupon.banner}}">
+          <image bindtap='clickyhq' src='{{item}}'></image>
+      </swiper-item>
+    </swiper>
+
+
+<!-- 这是餐厅环境 -->
+   <image src="../../img/mdphoto.png" style="width:800rpx;height:100rpx;"> </image>
+<!-- 餐厅环境轮播图 -->
+    <swiper class="context" autoplay='true' indicator-dots="true" circular='true'>
+      <swiper-item wx:for="{{cantin.banner}}">
+          <image src='{{item}}'></image>
+      </swiper-item>
+    </swiper>
+
+
+<!-- 这是推荐 -->
+<image src="../../img/tsphoto.png" style="width:800rpx;height:100rpx;"> </image>
+    <view class='tuijianboss' >
+        <view class='tuijian' wx:for="{{tuijian}}" style='margin-bottom:20rpx' >
+        <image src='{{item.img}}' data-id='{{item.id}}' catchtap='godescribe'></image>
+        <view style='margin-bottom:30rpx;'>{{item.name}}</view>
+        <view class='bottom'>
+            <view>
+              <view style='color:{{color}}'>¥{{item.price}}</view>
+              <view style="font-size:20rpx">已售{{item.buy}}件</view>
+            </view>
+            <view style='width:70rpx;height:70rpx;border-radius:50%;color:{{color}};border:1rpx solid {{color}};display:flex;justify-content: center;align-items: center;' catchtap='canvas' data-id='{{item.id}}'>
+              <i sytle="background:{{color}}" class="icon-03f iconfont" style="font-size:40rpx;" ></i>
+            </view>
+        </view>
+    </view>
+    </view> 
+
+    <view class='canvas {{active?"active":""}}' hidden='{{!canvas}}' >
+      <view class='son {{active?"upp":"downn"}}' catchtap=''>
+        <!-- 展示 推荐商品-->
+        <view style='display:flex;justify-content: space-between;padding:0 16rpx;height:150rpx;border-bottom:1rpx solid #ccc'>
+          <view style='display:flex;align-items:center;'>
+              <image src='{{carrr.img}}' style='width:150rpx;height:150rpx;margin-right:30rpx;margin-bottom:30rpx;border:4rpx solid white'></image>
+              <view>
+                <view style='margin-bottom:20rpx;'>{{carrr.name}}</view>
+                <view style="color:{{color}}">¥{{carrr.price}}</view>
+              </view>
+          </view>
+          <view style='padding-top:20rpx'>
+            <view style='border-radius:50%;border:1rpx solid #ccc;width:50rpx;height:50rpx;display:flex;justify-content:center;align-items:center;color:#ccc;'catchtap='again'>
+            X
+            </view>
+          </view> 
+        </view>
+        <!-- 数量 -->
+        <view style='display:flex;display:flex;justify-content:space-between;align-items:center;padding:0 16rpx;height:120rpx;'>
+          <text>购买数量</text>
+          <view style='display:flex;'>
+            <view style='width:50rpx;height:50rpx;display:flex;justify-content:center;align-items:center;border:1rpx solid #ccc;' catchtap='tjjian'>-</view>
+            <view style='width:70rpx;height:50rpx;display:flex;justify-content:center;align-items:center;border:1rpx solid #ccc;'>{{tjnum}}</view>
+            <view style='width:50rpx;height:50rpx;display:flex;justify-content:center;align-items:center;border:1rpx solid #ccc;' catchtap='tjjia'>+</view>
+          </view>
+        </view>
+        <!-- 最下面 -->
+        <view class='ShoppingCart'>
+          <view style="background:{{color}}" catchtap='jiacar'>加入购物车</view>
+          <view style="color:{{color}}; border:1rpx solid {{color}}" catchtap='gobuy'>立即购买</view>
+        </view>
+      </view>
+    </view>
+</view>
+</view>
+
+

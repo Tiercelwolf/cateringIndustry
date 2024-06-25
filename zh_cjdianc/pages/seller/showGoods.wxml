@@ -1,0 +1,65 @@
+
+<view class="gif"  wx:if="{{isloading}}" >
+    <image src="../../img/jzdh(1).gif"></image>
+</view>
+
+<view wx:if="{{!isloading}}">
+<button wx:if="{{state==1}}" class='canshu' catchtap='back' style='background:{{color}};color:#fff'>
+  选好了
+</button>
+<view class="navbar flex-row" style="border:1rpx solid #d5d5d5" wx:else>
+    <navigator class="flex-grow-1 flex-y-center" openType="reLaunch" url="{{item.url}}" wx:for="{{arr}}">
+        <view>
+            <image class="navbar-icon" src="{{item.logo2}}"></image>
+            <view class="navbar-text" style="color: {{item.title_color}};">{{item.title}} 
+          </view>
+        </view>
+    </navigator>
+</view>
+
+<view catchtap='search' class='one'>
+  <input placeholder='请输入商品名称' name="input"></input> 
+</view>
+
+<!-- 左边分类 -->
+<view class='two'>
+  <scroll-view class='left'  scroll-y="true">
+    <view wx:for="{{goods}}" wx:key="name" bindtap='selectMenu' data-id='{{item.id}}' data-index='{{index}}' class='{{selectIndex==index?"active":""}}'>
+      {{item.name}}
+    </view>
+  </scroll-view>
+  <!-- 右边菜品展示 -->
+  <scroll-view class='right'  scroll-y="true">
+    <view catchtap='detail' wx:for="{{goods[selectIndex].goods}}" data-id="{{item.id}}" wx:key="id" style='border-bottom:1rpx solid #eee;'>
+      <view class='top'>
+        <image src='{{item.img}}'></image>
+        <view>
+          <view>{{item.name}}</view>
+          <view style='color:{{color}}'>¥{{item.price}}元
+              <view class='bottom'>
+                  <view>
+                    <i style="background:{{color}}" class="iconfont icon-jian" data-id="{{item.id}}" catchtap="jian" ></i>
+                    <text style="color:{{color}}">{{item.num}}</text>
+                    <i style="background:{{color}}" class="iconfont icon-jia" data-id="{{item.id}}" catchtap="jia" ></i>
+                  </view>
+             </view>
+          </view>
+        </view>
+        <!-- 加减按钮 -->
+      </view>
+    </view>    
+  </scroll-view>   
+</view>
+ 
+<view class="footbottom">
+  <view class="footmj" wx:for="{{fullredus}}" wx:for-index="idx" wx:if="{{idx <= 3 }}">
+      <view>满{{item.full}}减{{item.reduction}}<text wx:if="{{idx != fullredus.length - 1 }}">;</text>
+      </view> 
+  </view>
+</view>
+
+<view class='car'  style="top:{{moveTop}}px;left:{{moveLeft}}px;" bindtouchmove="move" bindtap='goCar'>
+    <i class="icon-03f iconfont" style="color:white"></i>
+    <view style="background:{{color}}">{{carinfo.length}}</view>
+</view>
+</view>

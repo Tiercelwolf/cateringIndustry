@@ -1,0 +1,93 @@
+.page{
+    border-top: 1rpx solid #EDEDED;
+    background-color: #fff;
+    height: 600rpx;
+}
+
+.title{
+  padding-top: 30rpx;
+  padding-left: 25rpx;
+  font-size: 30rpx;
+  color: #000;
+}
+
+textarea{
+  width: 700rpx;
+  height: 200rpx;
+  background-color: #EAEAEA;
+  margin-top: 30rpx;
+  margin-left: 25rpx;
+}
+
+.photo view:nth-child(1){
+  font-size: 30rpx;
+  color: #000;
+  padding-left: 25rpx;
+  padding-top: 20rpx;
+}
+
+.photo view:nth-child(2){
+  font-size: 30rpx;
+  color: #000;
+  padding-left: 25rpx;
+  padding-top: 20rpx;
+}
+
+.phone view:nth-child(1){
+  padding-top: 20rpx;
+  height: 75rpx;
+  padding-left: 25rpx;
+}
+
+.phone view:nth-child(2){
+  display: flex;
+  align-items: center;
+   background-color: #fff;
+}
+
+.phone input{
+ padding-left: 60rpx;
+  padding-top: 15rpx;  
+}
+
+.box{
+  display: flex;
+  padding-top: 30rpx;
+}
+
+button{
+   width: 680rpx;
+   height: 70rpx;
+   font-size:  35rpx;
+   margin-top: 30rpx;  
+}
+
+/* 上传图片 */
+.sctp{
+  width:90rpx;
+  height:90rpx;
+  padding-left:30rpx; 
+  padding-top: 15rpx;
+}
+
+.xxk1{
+  border:1px dashed rgb(180, 177, 177);
+  width:145rpx;
+  height:145rpx;
+   margin-left: 25rpx;
+   margin-top: 15rpx;
+   align-items: center;
+}
+
+.x {
+    float: right;
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: 10rpx;
+    z-index: 999;
+}
+
+.x image {
+    width: 100%;
+    height: 100%;
+}

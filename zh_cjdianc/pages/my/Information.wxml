@@ -1,0 +1,23 @@
+<view class="maximal">
+    <view class="one">
+        <view>头像</view>
+        <view class="weui-cell__hd">
+            <image src="{{userInfo.img}}"></image>
+        </view> 
+    </view>
+
+    <view class="one">
+        <view>用户名</view>
+        <view>
+            {{userInfo.name}}
+        </view>    
+    </view>
+
+    <view class="one">
+        <view>手机号</view>
+        <view>
+            {{userInfo.user_tel}}
+        </view>       
+    </view>
+</view>
+

@@ -1,0 +1,32 @@
+@import "../wddd/ddxq.wxss";
+
+.ddxh {
+    font-size: 38rpx;
+    margin-right: 20rpx;
+}
+
+.footbtn {
+    padding: 0 30rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 30rpx;
+}
+
+.footbtn button{
+
+  width: 40%;
+  font-size: 28rpx;
+  color: #999;
+  margin-bottom: 20rpx;
+}
+
+.djjd {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-content:center;
+  color: #fff;
+}

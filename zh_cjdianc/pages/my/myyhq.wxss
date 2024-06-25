@@ -1,0 +1,148 @@
+.gif{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+.gif image{
+  width: 100%;
+  height: 70%;
+}
+
+.sjhb {
+    padding-top:20rpx;
+}
+
+.sjhbtop {
+    background: #fff;
+     display: flex;
+    justify-content: space-around;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+}
+
+.money{
+  padding-top: 15rpx;
+  padding-left: 20rpx;
+}
+
+.mdlogo {
+    margin-right: 20rpx;
+}
+
+.mdlogo image {
+    width: 120rpx;
+    height: 120rpx;
+}
+
+.yhname {
+    font-size: 30rpx;
+    font-weight: bold;
+    padding-top: 20rpx;
+}
+
+.yhtype {
+    font-size: 22rpx;
+    width: 120rpx;
+    border: 1rpx solid #E9453C;
+    border-radius: 10rpx;
+    color: #E9453C;
+    text-align: center;
+    margin: 10rpx 0;
+}
+
+.yhtime {
+    font-size: 22rpx;
+    color: #666;
+}
+
+.yhmoney {
+    font-size: 40rpx;
+    font-weight: bold;
+    color: #E9453C;
+}
+
+.yhtj {
+    margin-top: 5rpx;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.flex-col {
+    justify-content: space-around;
+}
+
+.sjhbbtm {
+    background: #fff;
+    display: flex;
+    padding-right: 20rpx;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.toUse{
+  background-color: #009ACD;
+  border-radius: 30rpx;
+  height: 60rpx;
+  width: 150rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.miaoshu{
+  border-top: 2rpx dashed #dddddd;
+   background: #fff;
+   padding: 15rpx 30rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    margin-left: 20rpx;
+    margin-right: 20rpx; 
+}
+.sysm {
+    font-size: 22rpx;
+    color: #999;
+    width: 650rpx;
+    padding-right: 20rpx;
+}
+
+.qsy {
+    color: #E9453C;
+    font-size: 24rpx;
+}
+
+.hyuan1 {
+    position: absolute;
+    width: 40rpx;
+    height: 40rpx;
+    background: #f4f4f4;
+    border-radius: 50%;
+    left: -20rpx;
+    top: -20rpx;
+}
+
+.hyuan2 {
+    position: absolute;
+    width: 40rpx;
+    height: 40rpx;
+    background: #f4f4f4;
+    border-radius: 50%;
+    right: -20rpx;
+    top: -20rpx;
+}
+
+.select_img{
+  width:20rpx;
+  height:20rpx;
+}
+.select_img_rotate{
+    transform:rotate(180deg); 
+}
+
+.rule{
+  font-size: 24rpx;
+    color: #666;
+}

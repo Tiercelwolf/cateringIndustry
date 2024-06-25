@@ -1,0 +1,27 @@
+.seach{
+  width: 100%;
+  height: 60rpx;
+  background-color: #EDEDED;
+  margin-top: 8rpx;
+  margin-bottom: 20rpx;
+}
+
+.content{
+  padding-left: 15rpx;
+  padding-top: 8rpx;
+}
+
+.feedback{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #DEDEDE;
+  line-height: 70rpx;
+}
+
+.feedback image{
+  width:20rpx;
+  height:20rpx;
+  margin-right: 20rpx;
+}

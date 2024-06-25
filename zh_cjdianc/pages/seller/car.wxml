@@ -1,0 +1,69 @@
+<include src="/zh_cjdianc/pages/commons/navbar/navbar.wxml"></include>
+  <navigator style='opacity:{{hidden?"1":"0.5"}}' class="return-index-btn" openType="redirect" url="/pages/index/index" wx:if="{{show_index}}">
+    <image src="/images/nav-icon-index.png" style="width: 50rpx;height: 50rpx"></image>
+  </navigator>
+
+<view class='one'>
+</view>
+<scroll-view class='show' scrollY="true">
+  <view wx:for="{{carinfo}}" class='item' >
+
+    <view class='left' >
+      <i class='iconfont icon-dui' style="color:{{item.isselect?color:''}}" bindtap="selectmenu" data-id="{{item.id}}"></i>
+      <image src='{{item.img}}'></image>
+      <view class='shu' >
+        <view style="font-size:35rpx;"> {{item.name}}</view>
+        <view>¥{{item.price}}</view>
+      </view>
+      <view class='cha'>
+        <i class=".iconfont icon-cha2" bindtap="cha" data-id="{{item.id}}"></i>
+      </view>
+      <view class='jj'>
+        <view>
+          <i style="background:{{color}}" class=".iconfont icon-jian" bindtap="jian" data-id="{{item.id}}"></i>
+          <text>{{item.num}}</text>
+          <i style="background:{{color}}" class=".iconfont icon-jia" bindtap="jia" data-id="{{item.id}}"></i>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view class='bottom'>
+  <view class='del'>
+    <view>您可以对以上商品进行删除操作</view>
+    <view style=' border: 1rpx solid {{color}};color:{{color}}' bindtap='deletion'>勾选删除</view>
+    
+  </view>
+
+  <view class='pay' wx:if="{{pppreinfo != '1' || pppreinfo == 'undefined'}}">
+    <view class='left'>
+      <view bindtap='qx'>
+        <i class='.iconfont icon-dui' style="color:{{allisselect?color:''}}"></i>
+        <text>全选</text>
+      </view>
+      <view style="color:{{color}}">
+        合计¥{{zj}}
+      </view>
+    </view>
+    <view class='right' style='background:{{color}};color:#fff' bindtap='goodsjs' wx:if="{{sfjs}}">
+      结算
+    </view>
+    <view class='righttt'  wx:else>
+      还差{{cha}}元起送
+    </view>
+  </view>
+
+  <view class='pay' wx:if="{{pppreinfo == '1'}}">
+    <view class='left'>
+      <view bindtap='qx'>
+        <i class='.iconfont icon-dui' style="color:{{allisselect?color:''}}"></i>
+        <text>全选</text>
+      </view>
+      <view style="color:{{color}}">
+        合计¥{{zj}}
+      </view>
+    </view>
+  </view>
+
+
+</view>

@@ -1,0 +1,12 @@
+/* zh_cjdianc/pages/my/problemdetails.wxss */
+page{
+  background-color: #fff;
+}
+
+.title, .detail{
+  padding-top: 30rpx;
+  padding-left: 25rpx;
+  font-size: 30rpx;
+  color: #000;
+  padding-right: 25rpx;
+}

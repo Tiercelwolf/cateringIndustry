@@ -1,0 +1,191 @@
+
+.zwxx {
+    color: #fff;
+}
+
+.head1 {
+    color: #fff;
+    font-size: 50rpx;
+    line-height: 50rpx;
+    padding-bottom: 20rpx;
+    text-align: center;
+}
+
+.ddinfo {
+    background: #fff;
+    padding-bottom: 50rpx;
+}
+
+.mdtime{
+  margin-top:20rpx;
+  margin-left:25rpx;
+  font-weight: 600;
+}
+
+.sjname {
+    padding: 20rpx 30rpx;
+    background: #fff;
+    color: #666;
+    font-weight: bold;
+}
+
+.sjname image {
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 10rpx;
+    margin-right: 20rpx;
+}
+
+.cart-item {
+    background: #F8F8F8;
+    padding: 10rpx 30rpx;
+    border-bottom: 15rpx solid #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.cart-item .goods-pic {
+    width: 90rpx;
+    height: 90rpx;
+    margin-right: 20rpx;
+    border-radius: 20rpx;
+}
+
+.cart-item .goods-name {
+    margin-bottom: 10rpx;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.cart-item .attr-list,.cart-item .num {
+    font-size: 9pt;
+    color: #888;
+}
+
+.cart-item .attr-list .attr-item {
+    display: inline-block;
+    margin-right: 36rpx;
+}
+
+.cart-item .attr-list .attr-item:last-child {
+    margin-right: 0;
+}
+
+.cart-item .price {
+    color: #333;
+}
+
+.formbdyh {
+    padding: 10rpx 30rpx;
+}
+
+.yhhead {
+    width: 35rpx;
+    height: 35rpx;
+    color: white;
+    text-align: center;
+    line-height: 35rpx;
+    border-radius: 6rpx;
+    margin-right: 20rpx;
+}
+
+.pei {
+    background: #69AF37;
+     border-top: 1rpx solid #f4f4f4;
+}
+
+.bao {
+    background: #087BEB;
+     border-top: 1rpx solid red;
+}
+
+.te {
+    background: linear-gradient(to top,#ED767C,#ED414A);
+}
+
+.jian {
+    background: #F57C12;
+}
+
+.xin {
+    background: #ff4544;
+}
+
+.formftyh {
+    border-top: 15rpx solid #f4f4f4;
+}
+
+.sfk {
+    padding: 10rpx 30rpx;
+    border-top: 1rpx solid #f4f4f4;
+}
+
+.sfk-fv {
+    min-width: 120rpx;
+    font-size: 28rpx;
+}
+
+.xiaoji {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.weui-cell:before {
+    border-top: 1rpx solid #efeff4;
+}
+
+.weui-cell {
+    padding: 15rpx 30rpx;
+}
+
+.weui-cell__bd {
+    min-width: 120rpx;
+    font-size: 28rpx;
+}
+
+.weui-cell__ft {
+    font-size: 26rpx;
+    font-weight: bloder;
+
+}
+
+.formft {
+    border-top: 15rpx solid #f4f4f4;
+}
+
+.lxsj {
+    color: #34aaff;
+    margin-left: 10rpx;
+    font-size: 28rpx;
+    width: 350rpx;
+}
+
+.headtitle {
+    color: black;
+    font-size: 30rpx;
+    font-weight: 600;
+}
+
+.copy {
+    color: #34aaff;
+    margin-left: 20rpx;
+    padding-left: 20rpx;
+    border-left: 1rpx solid #888;
+}
+
+.xzhiding {
+    position: absolute;
+    width: 140rpx;
+    text-align: center;
+    background: #FF4324;
+    color: #fff;
+    font-size: 18rpx;
+    transform: rotate(-45deg);
+    left: -45rpx;
+    top: 15rpx;
+}

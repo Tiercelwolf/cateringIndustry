@@ -1,0 +1,32 @@
+.option{
+  display: flex;
+  flex-wrap: wrap;
+}
+.main {
+  padding: 20rpx 20rpx 0 ;
+  background-color: white;
+}
+.one {
+  margin: 30rpx 0;
+}
+.option view{
+  padding: 0 20rpx;
+  border: 1rpx solid #ccc;
+  margin-right: 30rpx;
+  margin-bottom: 30rpx;
+}
+.active {
+  background-color: skyblue;
+  color: white;
+}
+textarea {
+  position: relative;
+  background-color: #eee;
+  width: 100%;
+  margin-bottom: 30rpx;
+}
+.currentWordNumber {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}

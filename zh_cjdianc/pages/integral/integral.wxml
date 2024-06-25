@@ -1,0 +1,36 @@
+<view class="integral">
+    <!-- 轮播功能暂时不实现-------------------------------------->
+    <view class="banner">
+       <image src="../../img/jifen.jpg"></image>
+    </view>
+    <!-- 轮播功能暂时不实现-------------------------------------->
+
+<!-------商品分类：饮料、零食、玩具、优惠券、菜品、电器------------------------>
+    <view class="nav-1">
+          <view bindtap="cxfl" wx:for="{{fenlei}}" id="{{item.id}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="*this" >
+            <image class="fenimg" src='../../img/meatbeef.jpg'></image>
+            <view class="fename ">{{item.name}}</view>          
+          </view>
+    </view> 
+
+
+    <view class="commodity">
+        <view class="comtitle">大家都在兑</view>
+        <view class="comlist flex2" wx:if="{{commodity.length!=0}}">
+            <view bindtap="interinfo" class="comone" id="{{item.id}}" wx:for="{{commodity}}" wx:key="*this">
+                <view class="onetitle gobyndsingle">{{item.name}}</view>
+                <view class="flex-center">
+                    <view class="comnum">{{item.money}}</view>
+                    <view class="comcost">积分</view>
+                    <view class="comred" wx:if="{{item.type=='1'}}">虚拟</view>
+                    <view class="comred" wx:if="{{item.type=='2'}}">实物</view>
+                </view>
+                <view class="comimgwai flex1">
+                    <image class="comimg" mode="aspectFit" src="{{url}}{{item.img}}"></image>
+                </view>
+            </view>
+            <view class="comone flex2"></view>
+        </view>
+        <view class="wsj" wx:else>此分类暂无数据</view>
+    </view>
+</view>

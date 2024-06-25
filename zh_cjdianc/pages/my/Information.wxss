@@ -1,0 +1,50 @@
+@import "../../../__wuBaseWxss__/7.wxss";
+
+.maximal {
+    margin: 20rpx 0rpx;
+    background-color: white;
+    font-size: 30rpx;
+    color: #333;
+    padding: 0rpx 30rpx;
+    border-top: 1rpx solid #EEEEEE;
+    border-bottom: 1rpx solid #EEEEEE;
+}
+
+.one {
+    height: 100rpx;
+    border-bottom: 1rpx solid #EEEEEE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weui-cell__hd image {
+    min-width: 80rpx;
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+}
+
+.jiantou{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.picker{
+    padding: 15px;
+    background-color: #FFFFFF;
+} 
+
+.weui-select {
+    border-right: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+
+.row-label {
+    margin-right: 24rpx;
+    min-width: 140rpx;
+}
+

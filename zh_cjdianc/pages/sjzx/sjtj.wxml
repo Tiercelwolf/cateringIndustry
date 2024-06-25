@@ -1,0 +1,42 @@
+<include src="/zh_cjdianc/pages/commons/navbar/navbar.wxml"></include>
+<view class="blbanner">
+    <view class="b-head">{{wm_name}}订单</view>
+</view>
+<!-- <view class="ddlb">
+    <view style="border-right:1px solid #d9d9d9">
+        <image src='../../img/dd-ywc.png'></image>
+        <text class="num">{{wmdd.wmnum}}</text>
+        <text class="text">今日订单量</text>
+    </view>
+    <view style="border-right:1px solid #d9d9d9">
+        <image src='../../img/personal/jbtq.png'></image>
+        <text class="num">{{wmdd.wm}}</text>
+        <text class="text">今日营业额（元）</text>
+    </view>
+</view> -->
+<view class="tjlb">
+    <view>
+         <image class="image" mode="aspectFit" src='../../img/dd-ywc.png'></image>
+        <text class="num">{{wmdd.wmnum}}</text>
+        <text class="text">今日订单量</text>
+    </view>
+    <view>
+        <image class="image" mode="aspectFit" src='../../img/personal/jbtq.png'></image>
+        <text class="num">{{wmdd.wm}}</text>
+        <text class="text">今日营业额(元)</text>
+    </view>
+</view>
+
+
+<view class="tjlb">
+    <view>
+        <image class="image" mode="aspectFit" src="../../img/weixin.png"></image>
+        <text class="num">{{wmdd.wxwmnum}}</text>
+        <text class="text">微信支付</text>
+    </view>
+    <view>
+        <image class="image" mode="aspectFit" src="../../img/ruzhus.png"></image>
+        <text class="num">{{wmdd.ztwmnum}}</text>
+        <text class="text">钱包支付</text>
+    </view>
+</view>

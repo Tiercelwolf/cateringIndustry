@@ -1,0 +1,64 @@
+<view class="weui-cells__title">常见问题</view>
+ <view style='border-bottom: 1rpx solid #ccc; '></view>
+  <view class='problem'>
+    <view class='left'>
+      <view><image src='../../img/wmtime.png'></image></view>
+      <view>催单问题<image src='../../img/blackjt.png'></image></view>
+    </view>
+    <view class='right'>
+      <view bindtap='order'>订单超时了怎么办？</view>
+      <view>订单一直没有骑手接单怎么办？</view>
+    </view>
+  </view>
+
+  <view style='border-bottom: 1rpx solid #ccc; '></view>
+
+  <view class='problem'>
+    <view class='left'>
+      <view><image src='../../img/tabdd.png'></image></view>
+      <view>追单问题<image src='../../img/blackjt.png'></image></view>
+    </view>
+    <view class='right'>
+      <view>商家拒绝我取消订单怎么办？</view>
+      <view>订单被取消了怎么办？</view>
+    </view>
+  </view>
+
+  <view style='border-bottom: 1rpx solid #ccc; '></view>
+  <view class='problem'>
+    <view class='left'>
+      <view><image src='../../img/sj-djd.png'></image></view>
+      <view>活动问题<image src='../../img/blackjt.png'></image></view>
+    </view>
+    <view class='right'>
+      <view>双十一合伙人：能量值攻略</view>
+      <view>为什么没有收到超级会员专享红包？</view>
+    </view>
+  </view>
+
+  <view style='border-bottom: 1rpx solid #ccc; '></view>
+
+  <view class='problem'>
+    <view class='left'>
+      <view><image src='../../img/personal/feedback.png'></image></view>
+      <view>投诉建议<image src='../../img/blackjt.png'></image></view>
+    </view>
+    <view class='right'>
+      <view>怎么投诉？</view>
+      <view>错送漏送餐品怎么办？</view>
+    </view>
+  </view>
+
+  <view style='border-bottom: 1rpx solid #ccc; '></view>
+
+<view class="foot flex-row flex-y-center">
+    <button class="flex-grow-1" openType="contact">
+        <image src="../../img/zxkf1.png"></image>
+        <view>在线客服</view>
+    </button>
+    <view class="sx"></view>
+    <button bindtap="tel" class="flex-grow-1">
+        <image src="../../img/telephone.png"></image>
+        <view>电话客服</view>
+    </button>
+</view>

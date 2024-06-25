@@ -1,0 +1,75 @@
+<view class="body">
+  <view class="top-1">   
+    <view class="top-1-3">
+        <view class="mon">
+          <view>退款金额:</view> 
+          <view class="mon-1" style="color:{{color}}">￥{{prefundamount}}</view>
+        </view>
+        
+        <view class="mon">
+          <view>买单时间:</view>
+          <view class="mon-1">{{pbuytime}}</view>
+        </view>
+ 
+        <view class="mon">
+          <view>订单编号:</view>
+          <view class="mon-1">{{pordernumber}}</view>
+        </view>
+    </view>
+  </view>
+
+
+  <view class="top-2">
+    <view style=' border-left: 20rpx solid {{color}};' class="top-2-1">退款方式</view>
+    <view class="top-2-2">原路退回<text style="color:{{color}}" font-size="38rpx;">(退款到原支付方)</text> </view>
+  </view>
+  <view class="cen-1">
+     <view style=' border-left: 20rpx solid {{color}};' class="cen-1-2">退款原因<text style="color:{{color}}">*</text></view>
+</view>
+
+<view class="section" >
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <text class="picker">{{array[index]}}</text>
+     <image class='select_img {{show&&"select_img_rotate"}}' src='../../img/down1.png'></image>  
+  </picker>
+</view>
+
+  <view class="cen-2">
+    <view class="cen-1-3">退款说明</view>
+      <textarea bindblur='refundinstruct' data-index="{{index}}" placeholder="描述您遇到的问题,有助于尽快退款(最多50个字)" placeholderStyle="color:#999;">
+      </textarea>
+  </view>
+
+          <view class="xxk1" wx:if="{{!sctp}}">
+              <view>
+                <image class="sctp" bindtap="sctp" src="../../img/sctp.png" ></image>
+                <text style=" display:flex;flex-direction:row;padding-left:10rpx;">上传图片</text>
+              </view>
+          </view>
+         
+           <view class="mdtp1" wx:if="{{sctp}}">
+                <view class="weui-uploader__bd">
+                    <view class="weui-uploader__files" id="uploaderFiles">
+                        <view class="weui-uploader__file" wx:for="{{images}}">
+                            <view bindtap="deleteImage" class="x" data-index="{{index}}">
+                                <image src="../../img/close.png"></image>
+                            </view>
+                            <image bindtap="previewImage" class="weui-uploader__img" mode="aspectFill" src="{{item}}"></image>
+                        </view>
+                    </view>
+                    <view class="weui-uploader__input-box" wx:if="{{images.length<3}}">
+                        <view bindtap="chooseImage" class="weui-uploader__input"></view>
+                    </view>
+                </view>
+                <view class="tpsl">{{images.length}}/3</view>
+            </view>
+
+  <view class="but-1">
+    <view class="but-1-1"  >手机号<text style="color:{{color}}">*</text></view>
+    <input type='text' bindblur="phone" data-index="{{index}}" style=" width: 700rpx; height: 40rpx;"></input>
+  </view>
+  <view class="but-2">
+    <view class="but-2-1" style="color:{{color}}">*提示:商家可能致电您，确认退款详情</view>
+    <view><button style='background:{{color}};color:#fff' bindtap="submission">提交申请</button></view>
+  </view>
+</view>

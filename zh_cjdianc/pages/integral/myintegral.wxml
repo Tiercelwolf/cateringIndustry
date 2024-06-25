@@ -1,0 +1,46 @@
+
+<view class="gif"  wx:if="{{isloading}}" >
+    <image src="../../img/jzdh(1).gif"></image>
+</view>
+
+<view wx:if="{{!isloading}}">
+<view>
+    <view bindtap="tzjfsc" class="head">
+        <view class="head1">我的积分</view>
+        <view class="head2">
+            <view class="head3">
+                <image src="../../img/cost.png"></image>
+                <view>{{integral}}</view>
+            </view>
+            <view class="head4">
+                <view class="head5">兑换物品</view>
+                <image mode="aspectFit" src="../../img/blackjt.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="integral" wx:for="{{score}}">
+        <view class="integral-left">
+            <view>{{item.note}}</view>
+            <view>{{item.cerated_time}}</view>
+        </view>
+        <view class="integral-right">
+            <text style="color:#6AC20B" wx:if="{{item.type==1}}">+{{item.score}}<text class="integral-right1">分</text></text>
+            <text style="color:#f44444" wx:if="{{item.type==2}}">-{{item.score}}<text class="integral-right1">分</text></text>
+        </view>
+    </view>
+
+    <view class="jzz" hidden="{{mygd }}">
+        <!-- wx:if 是遇 true 显示，hidden 是遇 false 显示 -->
+        <image class="Rotation" src="../../img/jzz.png"></image>
+        <view>加载中...</view>
+    </view>
+
+    <view class="jzwb" wx:if="{{mygd && score.length > 0}}">
+        <!-- wx:if 是遇 true 显示，hidden 是遇 false 显示 -->
+        <view class="hx"></view>
+        <view class="wz">加载完毕</view>
+        <view class="hx"></view>
+    </view>
+
+</view>
+</view>

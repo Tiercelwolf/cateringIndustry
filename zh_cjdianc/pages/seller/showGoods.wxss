@@ -1,0 +1,232 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1540880511925'); /* IE9*/
+  src: url('iconfont.eot?t=1540880511925#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
+  url('iconfont.ttf?t=1540880511925') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1540880511925#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-03f:before { content: "\e60a"; }
+
+.icon-duihao:before { content: "\e61e"; }
+
+.icon-search:before { content: "\e611"; }
+
+.icon-jian:before { content: "\e608"; }
+
+.icon-jia:before { content: "\e794"; }
+
+.icon-chenghao:before { content: "\e62e"; }
+
+.gif{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+.gif image{
+  width: 100%;
+  height: 70%;
+}
+
+page {
+  background-color: white;
+}
+
+.one {
+  height: 50rpx;
+  width: 90vw;
+  background-color:rgba(238, 238, 238, 0.534);
+  border-radius:20rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding-left: 20rpx;
+}
+
+.right{
+  padding-bottom: 100rpx;
+}
+
+.two {
+  margin-top: 20rpx;
+  display: flex;
+}
+.two .left {
+  width: 20vw;
+  height: 90vh;
+  background-color:rgba(238, 238, 238, 0.534);
+}
+.two .left .active{
+  background-color: white;
+  border-right: 0rpx solid white;
+}
+.two .right {
+  width: 80vw;
+  height: 90vh;
+}
+.two .left view {
+  width: 20vw;
+  height: 15vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(238, 238, 238, 0.0);
+}
+.two .right .top{
+  padding: 20rpx 20rpx 0 20rpx;
+  display: flex;
+  align-items: center;
+}
+ .right .top image{
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 20rpx; 
+  margin-bottom:20rpx; 
+  border-radius: 20rpx; 
+}
+.two .right .top>view view:nth-child(2){
+  color:#ffbb89;
+}
+.two .right .top>view view:nth-child(3){
+  color:#ccc;
+  text-decoration-line: line-through;  
+}
+.two .right .bottom {
+  margin-left: 260rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.two .right .bottom i{
+  color: white;
+  background-color: #ffbb89;
+  border-radius: 50%;
+}
+.two .right .bottom text {
+  text-align: center;
+  display: inline-block;
+  width: 50rpx;
+}
+
+.car {
+  width: 36px;
+  height: 36px;
+  background-color: rgba(155, 155, 155, 0.87);
+  border-radius: 50%;
+  position: fixed;
+  z-index: 100000;
+  top: 700rpx;
+  left: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;                          
+}
+.car view {
+  width: 30rpx;
+  height: 30rpx;
+  font-size: 20rpx;
+  margin-left: -5rpx;
+  margin-top: -10rpx;
+  background-color: #ffbb89;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+}
+
+.canshu{
+  height: 116rpx;
+  width: 100vw;
+  color: white;
+  font-size: 50rpx;
+  background-color: #ffbb89;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button.canshu {
+  width: 100vw;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+/* 商品头部列表 */
+.sjinfohd {
+    padding: 10px;
+    color: #fff;
+    font-size: 26rpx;
+    height: 15vh;
+}
+
+.sjleftimg {
+    width: 140rpx;
+    height: 140rpx;
+    margin-right: 20rpx;
+    border-radius: 20rpx;
+}
+.sjright1-l {
+    width: 400rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+}
+.sjright2 {
+    font-size: 20rpx;
+}
+.sjright2-l {
+    min-width: 30rpx;
+    width: 35rpx;
+    height: 35rpx;
+    margin-right: 10rpx;
+}
+.sjright1,.sjright2,.sjright3 {
+    height: 50rpx;
+}
+.sjright3text {
+    line-height: 30rpx;
+    height: 30rpx;
+    font-size: 20rpx;
+    padding: 0 10rpx;
+    border-right: 1rpx solid #fff;
+}
+
+.sjright3-r {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.footbottom{
+    position: fixed;
+    left: 0;
+    bottom: 110rpx;
+    z-index: 999;
+    display: flex;
+    width: 100%;
+    background: #fffadd;
+    justify-content: center;
+    align-items: center;
+}
+
+.footmj {
+    font-size: 26rpx;
+    background: #fffadd;
+    color: #666;
+}
+

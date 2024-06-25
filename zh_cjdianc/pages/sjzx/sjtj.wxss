@@ -1,0 +1,52 @@
+.ddlb {
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    padding: 20rpx 0;
+}
+
+.ddlb>view {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ddlb image{
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.tjlb {
+    border-top: 1rpx solid #f4f4f4;
+    display: flex;
+    flex-direction: row;
+    padding: 20rpx 0;
+}
+
+.tjlb>view {
+    background: #fff;
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 15rpx;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    width: 70rpx;
+    height: 70rpx;
+}
+
+.num {
+    font-size: 35rpx;
+}
+
+.text {
+    font-size: 26rpx;
+    color: #999;
+}

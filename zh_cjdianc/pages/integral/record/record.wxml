@@ -1,0 +1,37 @@
+<block wx:if="{{score.length!=0}}">
+    <view class="integral" wx:for="{{score}}" >
+     <!-- wx:for-item="{{item}}" wx:for-index="{{index}}" -->
+        <view class="integral-left">
+            <image mode="aspectFit" src="{{url}}{{item.good_img}}"></image>
+            <view class="integral-left1">
+                <view>{{item.good_name}}</view>
+                <view>{{item.time}}</view>
+            </view>
+        </view>
+        <view class="integral-right">
+            <text style="color:#f44444">-{{item.integral}}<text class="integral-right1">分</text>
+            </text>
+        </view>
+    </view>
+
+    <view class="jzz" hidden="{{mygd}}">
+        <!-- wx:if 是遇 true 显示，hidden 是遇 false 显示 -->
+            <image class="Rotation" src="/zh_cjdianc/img/jzz.png"></image>
+            <view>加载中...</view>
+    </view>
+
+    <view class="jzwb" wx:if="{{mygd}}">
+        <!-- wx:if 是遇 true 显示，hidden 是遇 false 显示 -->
+            <view class="hx"></view>
+            <view class="wz">加载完毕</view>
+            <view class="hx"></view>
+    </view>
+    
+</block>
+
+    
+
+<view class="list_imgbk2" hidden="{{score.length!=0}}">
+    <image class="list_imgbk" mode="aspectFit" src="../../../img/list.png"></image>
+    <view class="list_imgbk3">您暂时还没有兑换记录哦！</view>
+</view>

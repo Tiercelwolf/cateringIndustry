@@ -1,0 +1,41 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class='one'>
+    <input placeholder='请输入商品名称' name="input" bindinput='formName' bindconfirm="search" ></input>
+    <button style='color:{{color}}' formType="submit" plain="true" hover-class="none"><i style="color:{{color}}" class="iconfont icon-search"></i>搜索</button>  
+  </view>  
+</form>
+
+<view class="search_no" wx:if="{{lists.length == 0}}">
+  <view class='search_no1'>
+    <image src="../../img/search_no4.jpg" style='height:360rpx;width:360rpx;'> </image>
+  </view>
+  <view class='search_no2'>
+    <text>顾客大人，小店没有您搜索的商品哦/(ㄒoㄒ)/~~</text>
+  </view>
+</view>
+
+<view wx:if="{{lists.length != 0}}">
+  <scroll-view scrollY="true">
+    <view class="list" wx:for="{{lists}}" >
+      <view class="list-left">
+        <image mode="aspectFit" src="{{item.img}}"></image>
+        <view class="list-left1">
+          <view style="font-size:36rpx">{{item.name}}</view>
+          <view style='padding-top:10rpx;font-size:30rpx'>￥{{item.price}}</view>
+        </view>
+      </view>
+
+      <!-- 加号按钮  阿里 -->
+      <view class='bottom' style='margin-right:30rpx'>
+        <view>
+          <i class="iconfont icon-jia" data-id="{{item.id}}" bindtap="jia" ></i>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<view class='car'  style="top:{{moveTop}}px;left:{{moveLeft}}px;" bindtouchmove="move" bindtap='goCar'>
+    <i class="icon-03f iconfont" style="color:white"></i>
+    <view style='background:{{color}}'>{{carinfo.length}}</view>
+</view>

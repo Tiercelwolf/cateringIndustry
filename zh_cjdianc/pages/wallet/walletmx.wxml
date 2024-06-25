@@ -1,0 +1,41 @@
+<view class="">
+  <view class="nav-1"  style="background:{{color}}">
+    <scroll-view scroll-x="true" class="nav-1-left" scroll-left="{{scrollLeftValue}}" wx:if="{{!isPickerShow}}">
+      <view wx:for="{{categories}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" 
+          wx:key="unique" bindtap="navbarTap">{{item.name}}</view>
+    </scroll-view>
+  </view>
+</view>
+
+  <swiper class="itemContainer" bindchange="swiperChange" current="{{currentTab}}">
+		<view wx:for="{{categories}}">
+			<swiper-item>
+			   <scroll-view style='height:{{scrollHeight}}px' scroll-y="true"  scroll-with-animation="true">
+
+          <view wx:if="{{score!=null && score!='' }}"> 
+                <view class="integral" wx:for="{{score}}" data-id="{{item.id}}"  data-idx="{{index}}"  catchtap="details">
+                  <view class="integral-left">
+                      <view>{{item.note}}</view>
+                      <view>{{item.time}}</view>
+                  </view>
+                  <view class="integral-right">
+                      <text style="color:#6AC20B" wx:if="{{item.type==1}}">{{item.money}}<text class="integral-right1">元</text></text>
+                      <!-- <text style="color:#6AC20B" wx:if="{{item.type==1}}">+{{item.money}}<text class="integral-right1">元</text></text> -->
+                      <text style="color:#f44444" wx:if="{{item.type==2}}">-{{item.money}}<text class="integral-right1">元</text></text>
+                      <text style="color:#f44444" wx:if="{{item.type==3}}">{{item.money}}<text class="integral-right1">元</text></text>
+                      <image class="center_img" src="../../img/blackjt.png"></image>
+                  </view>    
+                </view>
+          </view>
+          
+            <view class="no_coupons" wx:else>
+              <view class="noe_coupons_img">
+                    <image mode="aspectFit" src="../../img/list.png"></image>
+                您暂无相关交易明细
+              </view>
+            </view> 
+  			</scroll-view>
+			</swiper-item> 
+		</view>
+</swiper>
+

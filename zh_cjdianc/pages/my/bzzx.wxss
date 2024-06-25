@@ -1,0 +1,87 @@
+page {
+    font-family: '微软雅黑',Helvetica,sans-serif;
+    font-size: 30rpx;
+    padding-bottom: 120rpx;
+    background-color: #fff;
+}
+
+.weui-cells__title {
+    margin: 0;
+    padding: 20rpx 30rpx;
+    color: #000;
+    font-size: 35rpx;
+}
+
+.weui-cells {
+    font-size: 28rpx;
+}
+
+.foot {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.foot button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 120rpx;
+    border: none;
+    border-radius: 0;
+    line-height: normal;
+}
+
+button::after {
+    border: none;
+}
+
+.foot image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.sx {
+    height: 80rpx;
+    width: 2rpx;
+    background: #d5d5d5;
+}
+
+.problem{
+  height: 150rpx;
+  margin-left: 30rpx;
+  display: flex;
+  margin-top: 20rpx;
+}
+
+.left{
+  width: 180rpx;
+  height: 120rpx;
+  justify-content: center;  
+  border-right: 1rpx solid #ccc;
+  
+}
+
+.left view:nth-child(1) image{
+  margin-left: 40rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.left view:nth-child(2) image{
+  margin-left: 20rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.right{
+  padding-left: 20rpx;
+  line-height: 60rpx;
+  width: 500rpx;
+}
+
+.right view:nth-child(1){
+  border-bottom: 1rpx solid #ccc;
+  
+}

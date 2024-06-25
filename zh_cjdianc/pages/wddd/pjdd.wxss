@@ -1,0 +1,267 @@
+.bar-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.submit-btn {
+    background: #ff4544;
+    color: #fff;
+    height: 100rpx;
+}
+
+.goods-list {
+    border-top: 1rpx solid #e3e3e3;
+    padding-bottom: 20rpx;
+}
+
+.goods-item {
+    background: #fff;
+    border-bottom: 1rpx solid #e3e3e3;
+    margin-bottom: 20rpx;
+}
+
+.goods-item .score-row {
+    padding: 24rpx 20rpx;
+    border-bottom: 1rpx #eee solid;
+}
+
+.goods-item .score-row .goods-pic {
+    width: 72rpx;
+    height: 72rpx;
+    min-width: 72rpx;
+}
+
+.goods-item .score-row .score-item image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+}
+
+.goods-item .score-row .score-item.active {
+    color: #ff4544;
+}
+
+.goods-item .content-row {
+    padding: 24rpx 20rpx;
+}
+
+.goods-item .form-label {
+    margin-right: 24rpx;
+}
+
+.goods-item textarea {
+    width: 100%;
+    height: 258rpx;
+    padding: 0 0;
+}
+
+.goods-item .pic-list {
+    padding: 24rpx 20rpx;
+    margin-left: -20rpx;
+    margin-top: -20rpx;
+}
+
+.image-picker {
+    font-size: 0;
+}
+
+.image-picker,.image-preview {
+    display: inline-block;
+    margin-left: 20rpx;
+    margin-top: 20rpx;
+}
+
+.image-preview {
+    position: relative;
+}
+
+.image-preview .image-del {
+    position: absolute;
+    top: -15rpx;
+    right: -15rpx;
+    height: 50rpx;
+    width: 50rpx;
+    background: #ff4544;
+    color: #fff;
+    font-weight: bolder;
+    border-radius: 999rpx;
+    font-size: 9pt;
+    box-shadow: 0 1rpx 2rpx rgba(0,0,0,.2);
+    z-index: 999;
+}
+
+.banner {
+    background-color: white;
+    padding: 0 30rpx 30rpx;
+    font-size: 28rpx;
+}
+
+.banner>textarea {
+    width: 100%;
+    height: 190rpx;
+}
+
+.tpsl {
+    background: white;
+    font-size: 30rpx;
+    text-align: right;
+    padding: 10rpx 40rpx;
+}
+
+.mdtp {
+    margin-top: 10rpx;
+    padding: 20rpx;
+}
+
+.mdtp image {
+    width: 100rpx;
+    height: 100rpx;
+    margin-right: 20rpx;
+}
+
+.mdtp view:nth-child(1) {
+    color: #000;
+    font-size: 30rpx;
+}
+
+.mdtp view:nth-child(2) {
+    color: #999;
+    font-size: 26rpx;
+}
+
+.mdtp1 {
+    margin-top: 10rpx;
+}
+
+.weui-uploader__bd {
+    background: white;
+}
+
+.weui-uploader__file {
+    margin-right: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.weui-uploader__img {
+    margin-top: 20rpx;
+    width: 160rpx;
+    height: 160rpx;
+}
+
+.weui-uploader__input-box {
+    margin-top: 20rpx;
+    margin-right: 30rpx;
+    margin-bottom: 30rpx;
+    width: 160rpx;
+    height: 160rpx;
+}
+
+.x {
+    float: right;
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: 10rpx;
+    z-index: 999;
+}
+
+.x image {
+    width: 100%;
+    height: 100%;
+}
+
+.pjxx {
+    height: 50rpx;
+    position: relative;
+    display: flex;
+    justify-content: center;  
+}
+
+.pjnr {
+    background: #F4F4F4;
+    padding: 20rpx;
+    border-radius: 10rpx;
+    margin-top: 40rpx;
+}
+
+.smile-image {
+    position: absolute;
+    top: 20rpx;
+    margin-left: 230rpx;
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.item {
+    position: absolute;
+    top: -2rpx;
+    width: 100%;
+    height: 100%;
+}
+
+.goodlist {
+    margin-top: 20rpx;
+   
+}
+
+.good {
+    padding: 15rpx;
+}
+
+.xxk{
+    border:1px dashed rgb(180, 177, 177);width:145rpx;height:145rpx;
+    margin-left: 15rpx;
+    margin-top: 45rpx;
+}
+
+.scsp{
+    margin-top:10rpx;
+    padding-left:30rpx;  
+    width:80rpx;
+    height:80rpx;
+ 
+}
+
+.sctp{
+    width:85rpx;
+    height:85rpx;
+    padding-left:30rpx; 
+    padding-top: 15rpx; 
+}
+
+.xxk1{
+    border:1px dashed rgb(180, 177, 177);width:145rpx;height:145rpx;
+    margin-left: 15rpx;
+    margin-top: 45rpx;
+}
+
+.jf{
+    font-size: 25rpx;
+    color: rgb(180, 177, 177);
+    margin-top: 150rpx;
+    padding-left: 20rpx;
+}
+
+.pjxx .star {
+    float: left;
+    width: 54rpx;
+    height: 54rpx;  
+    line-height: 54rpx;
+    padding: 38rpx 35rpx
+}
+
+.star image{
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.pjxx .rtxt{
+    display: inline-block;
+    height: 100rpx;
+    line-height: 100rpx;
+    margin-left: 35rpx;
+    color: #c00;
+    margin-top: 10rpx;
+    font-weight: bold;
+}

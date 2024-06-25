@@ -1,0 +1,111 @@
+
+<include src="/zh_cjdianc/pages/commons/navbar/navbar.wxml"></include>  
+
+<view class="hydlzhezhao" wx:if="{{hydl==true}}"></view>
+<view class="hydlbd" wx:if="{{hydl==true}}">
+    <view class="hydl">
+        <icon size="50" type="success"></icon>
+        <view>欢迎登录</view>
+    </view>
+    <button bindgetuserinfo="bindGetUserInfo" class="hydlqueren" openType="getUserInfo">+微信登录</button>
+</view>
+
+<view class="container">
+    <view class="font">
+<!--------------头部内容，登录者头像及名字模块--------------------------------------------->
+        <view bindtap="tzhy" class="logs_header" style="background:{{color}}">
+            <view class="logs_img">
+                <image class="logs_imgs" src="{{avatarUrl}}"></image>       
+                <view class="logs_name">
+                    <view class="logs_name1">
+                        <view class="logs_name">
+                            <view class="logs_name1">{{nickName}}</view>
+                        </view>
+                        <view class="cjhy flex-row flex-y-center" catchtap="supermember">
+                            <image mode="aspectFit" src="../../img/personal/huangg.png"></image><!--皇冠图片2-->
+                            <!---aspectFit（自适应）:保持纵横比缩放图片，使图片的长边能够完全展示出来，可完整地将图片展示出来--->
+                            <view>会员</view>
+                        </view>
+                    </view>
+                </view>   
+            </view>
+            <image class="blackjt" src="../../img/jiantou.png"></image>
+        </view>
+
+<!---------钱包、优惠、积分，三个view ----------------------------->
+    <view class='Myassets'>
+        <view class='my-first'>我的资产</view>
+          <view class='my-last'>
+            <view style='justify-content:center;align-items:center;' bindtap="wdhb">
+              <view><image  src="../../img/hb.png"></image></view>
+              <view style='text-align:center;padding-left:15rpx;'>红包</view>
+            </view>
+            <view style='justify-content:center;align-items:center;'  bindtap="wdyhq">
+              <view><image style='width:70rpx;padding-left:15rpx;' src="../../img/gr-yhq.png"></image></view>
+              <view style='text-align:center;padding-left:20rpx;'>优惠券</view>
+            </view>
+            <view bindtap="wallet">
+              <view><image  src="../../img/gr-qb.png"></image></view>
+              <view style='text-align:center;'>我的钱包</view>
+            </view>
+            <view bindtap="integral">
+              <image  src="../../img/gr-jf.png"></image>
+              <view style='text-align:center;padding-right:10rpx;'>积分商城</view>
+            </view>
+          </view>
+      </view>
+       
+<!-------logs_order-此部分是“个人中心”页面下半部分内容，收货地址、我的预约------------------>   
+    <view class='Myactivities'> 
+       <view class='my-first'>我的活动</view>
+         <view class='my-last' style='padding-left:-5rpx;'>
+           <view bindtap="wddz">
+              <view><image  src="../../img/personal/dizhi.png"></image></view>
+              <view style='text-align:center;'>收货地址</view>
+            </view>
+            <view bindtap="wdyy">
+              <view><image src="../../img/personal/yuyue.png"></image></view>
+              <view style='text-align:center;padding-left:-10rpx;'>我的预约</view>
+            </view>
+            <view bindtap="mycollection">
+              <view><image  src="../../img/personal/collection.png"></image></view>
+              <view style='text-align:center;'>我的收藏</view>
+            </view>
+            <view catchtap="supermember">
+              <image  src="../../img/personal/huang.png"></image>
+              <view style='align-items: center;padding-right:10rpx;'>会员中心</view>
+            </view>
+          </view>
+      </view>
+
+<!-------logs_seller-此部分是“个人中心”页面下半部分内容，在线客服------------------>  
+   <view class='Myservice'>
+       <view class='my-first'>我的服务</view>
+          <view class='my-last'>
+            <view bindtap="feedback">
+              <view><image  src="../../img/personal/feedback.png"></image></view>
+              <view>帮助反馈</view>
+            </view>
+            <view bindtap="help">
+              <view><image  src="../../img/personal/kefu.png"></image></view>
+              <view>客服中心</view>
+            </view>
+            <view wx:if="{{userInfo.admin === 1}}" bindtap="seller">
+              <view><image src="../../img/personal/sjrk.png"></image></view>
+              <view style='text-align:center;'>商家入口</view>
+            </view>
+            <view>
+              <image src="../../img/gr-fp.png"></image>
+              <view style='text-align:center;padding-right:10rpx;'>发票助手</view>
+            </view>
+          </view>
+      </view>
+    
+        <view class="foot morefunctions">
+          <view class="hx"></view>
+          <view>更多功能尽请期待</view>
+          <view class="hx"></view>
+        </view>
+
+    </view>
+</view>

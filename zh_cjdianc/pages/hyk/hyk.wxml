@@ -1,0 +1,76 @@
+<view class="page">
+    <view class="headimg">
+        <!-- 会员等级 -->
+        <view class="viptop">
+           <view class="viptop1">
+              <!-- <view>超级会员</view>
+              <view>升等级</view> -->
+              <view bindtap="rankrule">等级规则</view>
+           </view>
+           <view style='padding-top:80rpx;'>
+             <view class="viptop2">{{member}}会员</view>
+             <view class="viptop3">{{integral}}积分</view>
+             <view class="viptop4">
+                <image class="huanggimg" mode="aspectFit" src="../../img/personal/huang.png"></image>
+                {{output}}
+                <image class="huanggimg" mode="aspectFit" src="../../img/personal/huang.png"></image>
+             </view>
+           </view>
+        </view>
+
+        <!------会员特权，特权说明------------------------>
+        <!-- <view bindtap="lookck" class="hytq">
+            <view class="hytq1">会员特权</view>
+            <view class="tqsm">特权说明</view>
+            <image class="whimg" src="../../img/bangz.png"></image>
+        </view> -->
+        <!------专属红包、特殊标识、专属折扣、金币特权------>
+        <!-- <view class="zstq">
+            <view class="zstgcl">
+                <image src="../../img/personal/zshb.png"></image>
+                <view>专属红包</view>
+            </view>
+            <view class="zstgcl">
+                <image src="../../img/personal/jlj.png"></image>
+                <view>特殊标识</view>
+            </view>
+            <view class="zstgcl">
+                <image src="../../img/personal/zszk.png"></image>
+                <view>专属折扣</view>
+            </view>
+            <view class="zstgcl">
+                <image src="../../img/personal/jbtq.png"></image>
+                <view>金币特权</view>
+            </view>
+        </view> -->
+    </view>
+
+    <!-- <view class="mylhb" hidden="true">
+        <view class="mylhbhd">每月免费领红包</view>
+        <view>会员期内每月可免费领取
+      <text style="color: #f44444;">4个</text>无门槛红包</view>
+        <view class="hbcells">
+            <view class="hbcell" style="background: {{item.state=='1'?'#fff':''}};color:{{item.state=='1'?'':''}}" wx:for="{{Coupons}}">
+                <view class="hbleft">
+                    <text>￥</text>
+                    <text>{{item.reduce}}</text>
+                </view>
+                <view class="hbright">无门槛红包</view>
+                <view class="hbtop"></view>
+                <view class="hbbtm"></view>
+            </view>
+        </view>
+    </view>
+
+    <view class="mylhb">
+        <view class="mylhbhd">买单享受专属折扣</view>
+
+        <view>会员期内买单可享受
+            <text style="color: #f44444;">折扣优惠</text>
+        </view>
+
+    </view> -->
+</view>
+
+<import src="/zh_cjdianc/pages/commons/xy.wxml"></import><!--import导入模板-->
+<template is="xytemp" data="{{fwxy:fwxy,xymc:xymc,xynr:xynr}}"></template>

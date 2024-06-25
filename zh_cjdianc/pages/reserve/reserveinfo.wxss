@@ -1,0 +1,5 @@
+@import "../wddd/ddxq.wxss";
+
+.formftyh { 
+    border-top: 1rpx solid #f4f4f4;
+}

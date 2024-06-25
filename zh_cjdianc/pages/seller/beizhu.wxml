@@ -1,0 +1,12 @@
+<view class='main'>
+    <view class="one">备注</view>
+    <view class='option'>
+      <view wx:for="{{option}}" data-id='{{item.id}}' catchtap='option' class='{{item.select?"active":""}}'>{{item.name}}</view>
+    </view>
+    <form bindsubmit="push">
+        <textarea bindinput='input' rows="3" placeholder="请输入备注" maxlength="50" value='{{initValue}}' name="area"> 
+          <text class="currentWordNumber">{{currentNoteLen|0}}/{{noteMaxLen}}个字</text>
+        </textarea>
+        <button type="primary"  form-type='submit'>确定</button>
+    </form>
+</view>

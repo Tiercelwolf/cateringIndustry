@@ -1,0 +1,45 @@
+
+<view class='god {{activeee?"active":""}}' bindtap='transformhidden' hidden='{{hidden}}'>
+  <view class='son {{activeee?"slideup":"slidedown"}}'>
+
+    <view class="whole">
+  <view class="top">
+    <view class="t-left">支付</view>
+ 
+    <view class="t-right"><image src="../../img/x.png" catchtap='deletee'></image></view>
+  </view>
+  
+      <view class="remaining" wx:if="{{order_type == '1' || order_type == '2'}}">支付剩余时间:
+           <text bindtap='xxx'>{{timeText}}</text>
+       </view> 
+      <view class="top-1" >
+         ￥{{paymoney}}
+      </view>
+
+  <view class="middle" >
+    <view class="m-1" catchtap='sqwselect1'>
+      <view>
+        <image src="../../img/icon/wxdl.png"></image>
+        微信支付
+      </view>
+      <icon style='float:right' type='success_no_circle' wx:if="{{sqw==1}}" ></icon>
+    </view>
+
+
+    <view class="m-2"  catchtap='sqwselect2'>
+      <view style='height' bindtap='wallectpay'>
+              <image src="../../img/yeqb.png"></image>
+              钱包支付(￥{{Wallectmoney}})
+              <image src="../../img/personal/chongzhi.png"></image>     
+              <button catchtap="recharge" style='float:right;'>充值</button>             
+      </view>
+      <icon style='float:right' type='success_no_circle' wx:if="{{sqw==2}}" ></icon>
+    </view>
+ </view>
+
+  <button style='background:{{color}};color:#fff' class="button" data-id="{{orderid}}" data-money="{{money}}" data-type="{{sqw}}" bindtap="confirmpay">确认支付</button>
+
+</view>
+  </view>
+</view>
+

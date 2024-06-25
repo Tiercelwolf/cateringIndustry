@@ -1,0 +1,11 @@
+<view class="navbar flex-row" style="background-image: url({{_navbar.background_image}});border:1rpx solid {{_navbar.border_color}}" wx:if="{{_navbar&&_navbar.navs&&_navbar.navs.length>0}}">
+    <!--页面链接，点击“首页、订单、个人中心”进入各个页面-->
+    <navigator class="flex-grow-1 flex-y-center" openType="redirect" url="{{item.url}}" wx:for="{{_navbar.navs}}">
+        <view>
+            <image class="navbar-icon" src="{{item.active?item.logo:item.logo2}}"></image><!--首页、订单、个人中心上方的小图片-->
+            <view class="navbar-text" style="color: {{item.active?item.title_color:item.title_color2}};">{{item.title}}</view>
+            <!---“首页、订单、个人中心”三个词---->
+        </view>
+    </navigator>
+</view>
+<!--此文件是共有文件，三个主页面底部的“首页、订单、个人中心”框架-->

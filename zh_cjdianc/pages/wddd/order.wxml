@@ -1,0 +1,208 @@
+
+<include src="/zh_cjdianc/pages/commons/navbar/navbar.wxml"></include>
+<navigator style='opacity:{{hidden?"1":"0.5"}}' class="return-index-btn" openType="redirect" url="/pages/index/index" wx:if="{{show_index}}">
+    <image src="/images/nav-icon-index.png" style="width: 50rpx;height: 50rpx"></image>
+</navigator>
+ 
+
+<view class="flex-row tab-bar" style='padding-left:40rpx;display:flex;'>
+
+  <view class="flex-grow-1" data-index='1' bindtap='selectitem'> 
+    <view style='line-height:5rpx;' >
+      <image src="{{status=='1' ? '../../img/dd-dfk.png':'../../img/dd-dfkh.png'}}"></image>
+      <text style="color:{{status==1?color:''}};border-bottom:{{status==1?2:0}}rpx solid {{color}};">待付款</text> 
+    </view>
+  </view>
+
+  <view class="flex-grow-1" data-index='2' bindtap='selectitem'> 
+    <view style='line-height:5rpx;'>
+      <image src="{{status=='2'||status=='3' ? '../../img/dd-dfh.png':'../../img/dd-dfhh.png'}}"></image>
+      <text style="color:{{status==2||status==3?color:''}};border-bottom:{{status==2||status==3?2:0}}rpx solid {{color}}">待发货</text>
+    </view>
+  </view>
+
+  <view class="flex-grow-1" data-index='4' bindtap='selectitem'> 
+    <view style='line-height:3rpx;'>
+      <image src="{{status=='4' ? '../../img/dd-dsh.png':'../../img/dd-dshh.png'}}"></image>
+      <text style="color:{{status=='4'?color:''}};border-bottom:{{status=='4'?2:0}}rpx solid {{color}}">待收货</text>
+    </view>
+  </view>
+
+  <view class="flex-grow-1" data-index='7' bindtap='selectitem'> 
+    <view style='line-height:5rpx;'>
+      <image src="{{status=='6'||status=='7'||status=='8'||status=='9' ? '../../img/dd-ywc.png':'../../img/dd-ywch.png'}}"></image>
+      <text style="color:{{status==6||status==7||status==8||status==9?color:''}};border-bottom:{{status==6||status==7||status==8||status==9?2:0}}rpx solid {{color}}">已完成</text>
+    </view>
+  </view>
+
+  <view class="flex-grow-1" data-index='11' bindtap='selectitem'> 
+    <view style='line-height:5rpx;'>
+      <image src="{{status=='5'||status=='10'||status=='11' ? '../../img/dd-sh.png':'../../img/dd-shh.png'}}"></image>
+      <text style="color:{{status==5||status==10||status==11?color:''}};border-bottom:{{status==5||status==10||status==11?2:0}}rpx solid {{color}};padding-left:15rpx;">售后</text>
+    </view>
+  </view>
+</view>
+
+
+<view class="order-list">
+    <view class="no-data-tip zwdd" wx:if="{{order_list.length==0&&mygd}}">
+        <image mode="aspectFit" src="../../img/list.png"></image>
+        <view>您暂无相关订单哦~</view>
+    </view>
+
+    <view class="order-item" wx:for="{{order_list}}" wx:for-item="oitem" wx:key="{{}}" wx:if="{{(oitem.order.order_type != '3' && oitem.good.length > 0) || (oitem.order.order_type == '4' && oitem.good.length == 0)}}" >
+    
+        <navigator url="ddxq?oid={{oitem.order.id}}" >
+          
+          <view class="flex-row order-info">          
+                <view style='display:flex;justify-content:space-between' class="flex-grow-1">                
+                  <view style="font-size:30rpx;">订单编号:{{oitem.order.order_num}}</view>  
+                  <view style='color:red;font-size:23rpx;' wx:if="{{oitem.order.order_type=='4'}}" ><text>预约订单</text></view>
+                  <view style='color:red;font-size:23rpx;' wx:if="{{oitem.order.pay_type=='4'}}" ><text>积分兑换</text></view>
+                  <view style='color:red;font-size:23rpx;' wx:if="{{oitem.order.order_type=='1' && oitem.order.pay_type != '4'}}" ><text>外卖订单</text></view>
+                  <view style='color:red;font-size:23rpx;' wx:if="{{oitem.order.order_type=='2' && oitem.order.pay_type != '4'}}" ><text>自提订单</text></view> 
+                  <view style='color:red;font-size:23rpx;' wx:if="{{oitem.order.order_type=='3'}}" ><text>在店消费</text></view>                
+                  <!-- <view class="mdtime"  style="margin-bottom:20rpx">下单时间:{{oitem.order.jd_time}}</view> -->
+                </view>                  
+          </view> 
+
+            <view style='display:flex;justify-content:space-between'>     
+                <view class="mdtime"  style="margin-bottom:20rpx">下单时间:{{oitem.order.jd_time}}</view>
+                
+                <view class="orderstate" wx:if="{{status==1&&oitem.order.order_type=='1'}}" ><text>{{timeText}}</text></view>
+                <view class="orderstate" wx:if="{{status==1&&oitem.order.order_type=='2'}}" ><text>{{timeText}}</text></view>
+
+                <block class="orderstate" wx:if="{{status==4}}">
+                  <view class="orderstate" wx:if="{{oitem.order.order_type=='2'}}">待自提</view>
+                </block>
+               
+                <block class="orderstate" wx:if="{{status==11}}">
+                  <view class="orderstate" wx:if="{{oitem.order.state==5}}" ><text>退款中</text></view>
+                  <view class="orderstate" wx:if="{{oitem.order.state==11}}" ><text>退款完成</text></view>   
+                </block>
+
+                <block wx:if="{{status==7}}">
+                  <view class="orderstate" wx:if="{{oitem.order.state==9}}" ><text>交易成功</text></view>
+                  <view class="orderstate" wx:if="{{oitem.order.state==7}}" ><text>交易成功已评价</text></view>
+                  <view class="orderstate" wx:if="{{oitem.order.state==8}}" ><text>交易关闭</text></view>
+                </block>   
+            </view>  
+          
+        </navigator>
+
+           <view class="goods-list" wx:for="{{oitem.good}}" wx:for-item="itemmm" wx:key="{{}}">
+              <view class="goods-item flex-row">
+                  <view class="flex-grow-1 flex-col">
+                      <view class="flex-grow-1 flex-row flex-y-center">
+                         <view class="flex-grow-1" style="margin-bottom:40rpx;padding-left:15rpx;">{{itemmm.name}}
+                             <view wx:if="{{oitem.order.pay_type != '4'}}" class="flex-grow-0 sfmoney" style="float:right">￥{{itemmm.money}}</view>
+                             <view wx:if="{{oitem.order.pay_type == '4'}}" class="flex-grow-0 sfmoney" style="float:right;text-decoration:line-through;">￥{{itemmm.money}}</view>
+                        </view>
+                      </view>
+                  </view>                    
+              </view>
+           </view>  
+
+             <view style='font-size:25rpx;margin-bottom:40rpx;padding-left:15rpx;' wx:if="{{oitem.num>1}}">等{{oitem.num}}件商品</view>
+             <view wx:if="{{oitem.order.pay_type != '4'}}" style='display:flex;justify-content:flex-end;color:red;font-size:38rpx;'>合计:￥{{oitem.order.paymoney}}</view>
+             <view wx:if="{{oitem.order.pay_type == '4'}}" style='display:flex;justify-content:flex-end;color:red;font-size:38rpx;'>合计:{{oitem.order.integral_money}}积分</view>
+             
+              
+    <view class="flex-row">        
+        <view class="mdtime" wx:if="{{oitem.order.state==49}}" style="margin-top:30rpx;margin-left:25rpx;">自提时间:{{oitem.order.complete_time}}</view>
+
+        <view class='' wx:if="{{oitem.order.state==5||oitem.order.state==10}}" style="margin-top:30rpx;margin-left:25rpx;color:{{color}}">说明:{{tk_reason}}</view>
+        <view class='' wx:if="{{oitem.order.state==11&&oitem.order.lastrsn==4}}" style="margin-top:30rpx;margin-left:25rpx;color:{{color}}">说明:{{tk_reason}}</view>
+        <view class='' wx:if="{{oitem.order.state==11&&oitem.order.lastrsn==2}}" style="margin-top:30rpx;margin-left:25rpx;color:{{color}}">说明:商家已拒绝</view>
+        
+
+            <view class="flex-grow-1 flex-y-center flex-row dbbtn">
+                <block wx:if="{{status==5||status==10||status==11}}">
+                   <view bindtap="tkjd" style="border:1rpx solid {{color}};color:{{color}};" data-lastrsn='{{oitem.order.lastrsn}}' data-id="{{oitem.order.id}}" class="ddbtn5" wx:if="{{status==5||status==10||status==11}}">退款进度</view>
+                </block>
+
+  <block wx:else>
+      <view class="" wx:if="{{status==1}}">
+    <!-- 外卖自提 -->
+        <button bindtap="transform" wx:if="{{oitem.order.state == '1' }}" style="border:1rpx solid {{color}};color:{{color}};" class="ddbtn ddbtn1" data-index='{{index}}' data-id="{{oitem.order.id}}" data-money="{{oitem.order.paymoney}}" data-ordertype= '{{oitem.order.order_type}}' data-type="{{oitem.order.pay_type}}" >付款</button> 
+        <!-- 扫码 -->
+        <button disabled='false' class="ddbtn ddbtn1" style='color:#ccc' type='default' wx:if="{{oitem.order.state == '2' && oitem.order.order_type == '3'}}">付款</button>
+        <!-- 预约 -->
+        <button disabled='false' class="ddbtn ddbtn1" style='color:#ccc' type='default' wx:if="{{oitem.order.state == '12'}}">付款</button>
+        <!-- 预约空订单 -->
+        <button disabled='false' class="ddbtn ddbtn1" style='color:#ccc' type='default' wx:if="{{oitem.good.length == 0}}">付款</button>
+        <!-- 付款弹窗组件 -->
+        <paypopup id="paypopup"  order_type="{{poporder_type}}" timeText="{{timeText}}" paymoney="{{odpaymoney}}" Wallectmoney="{{Wallectmoney}}" money="{{odpaymoney}}" orderid="{{poporderid}}" color="{{color}}" bind:assembly="assembly"></paypopup>
+      </view>
+
+      <view class="" wx:if="{{status==1}}">
+        <!-- 外卖自提 -->
+        <button wx:if="{{oitem.order.state == '1' && (oitem.order.order_type=='1' || oitem.order.order_type=='2')}}" style="border:1rpx solid {{color}};color:{{color}};" bindtap="canceldd" class="ddbtn" data-id="{{oitem.order.id}}">取消 </button>
+        <!-- 扫码 -->
+        <button wx:if="{{oitem.order.state == '2' && oitem.order.order_type=='3'}}" style="border:1rpx solid {{color}};color:{{color}};" bindtap="canceldd" class="ddbtn" data-id="{{oitem.order.id}}">取消 </button>
+        <!-- 扫码预约 -->
+         <button disabled='false' class="ddbtn ddbtn1" style='color:#ccc' type='default' wx:if="{{(oitem.order.state == '1'|| oitem.order.state == '12') && (oitem.order.order_type=='3' || oitem.order.order_type=='4')}}">取消</button>
+      </view>
+
+      <view class="" wx:if="{{status==1}}" catchtap='addDish' data-id="{{oitem.order.id}}" data-type="{{oitem.order.order_type}}">
+        <button class="ddbtn ddbtn1" style="border:1rpx solid {{color}};color:{{color}};">加菜</button>
+      </view>
+
+      <view class="" wx:if="{{status==2||status==3}}">
+        <button bindtap="txsj" class="ddbtn" style="border:1rpx solid {{color}};color:{{color}};" data-tel="{{oitem.order.store_tel}}">
+           提醒商家       
+        </button>
+      </view>
+
+      <view class="" wx:if="{{status==2||status==3}}">
+        <button bindtap="sqtk" class="ddbtn" style="border:1rpx solid {{color}};color:{{color}};" data-id="{{oitem.order.id}}" wx:if="{{oitem.order.pay_type=='1'||oitem.order.pay_type=='3'}}"> 申请退款</button>
+      </view>
+
+      <view class="" wx:if="{{status==4&&oitem.order.order_type=='2'}}">
+        <button bindtap="hxqh" class="ddbtn" style="border:1rpx solid {{color}};color:{{color}};" data-id="{{oitem.order.id}}" data-sjid="{{oitem.order.store_id}}">
+          核销取货
+        </button>
+      </view>
+  </block>
+
+      <view class="" wx:if="{{status==7&&oitem.order.state==9}}">
+        <navigator style="border:1rpx solid {{color}};color:{{color}};" class="ddbtn5" data-id="{{oitem.order.id}}" url="pjdd?oid={{oitem.order.id}}">待评价</navigator>
+      </view>
+
+      <view class="" wx:if="{{status==6||status==7||status==9}}">
+        <button style="border:1rpx solid {{color}};color:{{color}};" bindtap="orderRevoke" class="ddbtn5" data-id="{{oitem.order.id}}">
+           删除          
+        </button> 
+      </view>
+</view>
+</view>
+</view>
+
+    <view class='goTop' wx:if="{{!hidetop}}" bindtap="goTop">
+       <view><image src='../../img/topjt.jpg'></image></view>
+       <view class='db'>顶部</view>
+    </view>
+  
+   <view class="jzz" hidden="{{mygd}}">
+      <image class="Rotation" src="../../img/jzz.png"></image>
+      <view>加载中...</view>
+   </view>
+
+   <view class="jzwb" wx:if="{{mygd && jzwb}}">
+      <view class="hx"></view>
+      <view>加载完毕</view>
+      <view class="hx"></view>
+   </view>
+ </view> 
+
+
+<view bindtap="hide" class="flex-row flex-y-center modal1 {{hide==1?'hide':''}}">
+    <view class="flex-y-center" style="width:100%;height:800rpx;padding:125rpx;">
+        <view style="background-color:#fff;width:100%;height:100%;border-radius:10rpx;padding:0 50rpx;">
+            <view class="flex-x-center" style="width:100%;height:50rpx;margin:20rpx 0;font-size:13pt;">核销二维码</view>
+            <image src="data:image/jpg;base64,{{hx_code}}" style="width:400rpx;height:400rpx;"></image>
+            <view class="flex-x-center" style="width:100%;height:50rpx;font-size:9pt;">出示给商家扫码核销</view>
+        </view>
+    </view>
+</view>
+

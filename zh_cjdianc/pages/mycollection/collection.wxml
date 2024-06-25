@@ -1,0 +1,74 @@
+<block wx:if="{{collections.length!=0}}">
+    <view class="collections" wx:for="{{collections}}" >
+        <view class="collections-left">
+            <image style='border-radius:20rpx;' src="{{item.img}}"></image>
+            <view class="collections-left1">
+                <view style="font-size:38rpx">{{item.name}}</view>
+                <view style='color:red;padding-top:10rpx;font-size:30rpx'>￥{{item.price}}</view>
+            </view>
+        </view>
+
+        <!-- 加号按钮  阿里 -->
+        <view class='bottom' style='margin-right:30rpx'>
+          <view>
+            <i class="iconfont icon-jia" data-id="{{item.id}}" bindtap="jia" ></i>
+          </view>
+        </view>
+    </view>
+
+    <view class="jzz" hidden="{{mygd}}">
+      <image class="Rotation" src="/zh_cjdianc/img/jzz.png"></image>
+      <view>加载中...</view>
+    </view>
+
+    <view class="jzwb" wx:if="{{mygd}}">
+      <view class="hx"></view>
+      <view class="wz">加载完毕</view>
+      <view class="hx"></view>
+    </view>
+
+    <view class='car'  style="top:{{moveTop}}px;left:{{moveLeft}}px;" bindtouchmove="move" bindtap='goCar'>
+      <i class="icon-03f iconfont" style="color:white"></i>
+    </view>
+</block>
+
+<view class="list_imgbk2" hidden="{{collections.length!=0}}">
+    <image class="list_imgbk" mode="aspectFit" src="../../img/list.png"></image>
+    <view class="list_imgbk3">您暂时还没有收藏菜品哦！</view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <view>
+    <view wx:for="{{collections}}" wx:key="id" style='border-bottom:1rpx solid #eee'>
+    <view style='border-bottom:1rpx solid #eee'>
+      <view class='top'>
+        <image src='{{collections.img}}'></image>
+        <view>
+          <view>{{name}}</view>
+          <view>¥{{price}}元</view>
+        </view>
+      </view>
+      <view class='bottom'>
+          <view>
+            <i class="iconfont icon-jian" data-id="{{collections.id}}" bindtap="jian" ></i>
+            <text >{{num}}</text>
+          </view>
+      </view>
+    </view>
+</view> -->

@@ -1,0 +1,79 @@
+form{
+  height: 100%;
+  width: 100%;
+}
+
+.one{
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+  background-color: white;
+  align-content: center;
+}
+
+.two {
+  height: 100rpx;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  background-color: white;
+}
+
+.two1 {
+  height: 100rpx;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  background-color: white;
+  color:red;
+}
+
+.three {
+  height: 100rpx;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  background-color: white;
+}
+.two image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.textarea{
+  padding: 20rpx;
+  background-color: white
+}
+textarea{
+  border: 1rpx solid #E6E6E6;
+  width: 100%;
+  height: 160rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+  margin-top: 10rpx;
+  border-radius: 6rpx;
+}
+button{
+  width: 100vw;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+button{
+  position: fixed;
+  left: 3vw;
+  bottom: 1vh;
+  width: 94vw;
+  height: 100rpx;
+}

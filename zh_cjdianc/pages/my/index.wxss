@@ -1,0 +1,311 @@
+.gif{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+.gif image{
+  width: 100%;
+  height: 70%;
+}
+
+.container {
+    padding-bottom: 115rpx;
+}
+
+.hydl {
+    display: flex; /*多栏多列布局,指定为行内容器模式*/
+    flex-direction: column;/*从上到下的垂直方向为主轴*/
+    justify-content: center;/*主轴为左到右，一行显示不下的在下一行居中显示*/
+    align-items: center;/*元素位于容器的中心。元素在该行的侧轴（纵轴）上居中放置*/
+}
+
+.hydl view {
+    margin-top: 20rpx;
+    font-size: 30rpx;
+}
+
+.hydlbd {
+    width: 60%;
+    left: 50%;
+    top: 35%;
+    position: fixed;
+    transform: translate(-50%,0);/*位移*/
+    background: #fff;
+    border-radius: 10px;
+    z-index: 999;
+    padding: 50rpx;
+}
+
+.hydlqueren {
+    position: relative;
+    height: 75rpx;
+    width: 60%;
+    font-size: 30rpx;
+    line-height: 75rpx;
+    text-align: center;
+    color: white;
+    background: #09BB07;
+    border-radius: 10rpx;
+    margin-top: 30rpx;
+}
+
+button:active {
+    color: rgba(255,255,255,0.6);
+    opacity: 0.6;
+}
+
+.hydlzhezhao {
+    position: fixed;/*生成绝对定位的元素，相对于浏览器窗口进行定位。*/
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 998;/*Z轴 元素的堆叠顺序；z-index 的值大的容器会叠在z-index 的值小的容器上面。比如一个窗口弹出覆盖另一个窗口。*/
+}
+
+page {
+    background-color: #F5F5F5;
+}
+
+.qd {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 28rpx;
+}
+
+.qd image {
+    width: 60rpx;
+    height: 60rpx;
+    margin-bottom: 20rpx;
+}
+
+.logs_header {
+    padding: 30rpx;
+    background-color: #34AAFF;
+    display: flex;
+    color: white;
+    justify-content: space-between;/*元素在主轴上的对齐方式*/
+    align-items: center;
+}
+/**-------------------------------------------------------------------*/
+.logs_imgs {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+}
+
+.logs_img {
+    display: flex;
+    align-items: center;/**元素在交叉轴的对齐方式*/
+    position: relative;/*相对定位，元素框偏移某个距离。元素扔保持其未定位前的形状，它原来所占的空间扔保留*/
+    
+}
+.my-first{
+  padding-top: 15rpx;
+  font-size: 35rpx;
+  /* font-weight: 600; */
+  width: 100%;
+  
+}
+
+.my-last{
+  border-top: 1rpx solid #EEE0E5;
+  width:100%;
+  height: 150rpx;
+  /* background-color: skyblue; */
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20rpx;
+  
+}
+
+.my-last image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 25rpx;
+}
+
+.Myassets,.Myactivities,.Myservice{
+  background-color: #fff;
+  padding-left: 10rpx;
+  margin-top: 20rpx;
+}
+
+.blackjt {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.logs_name {
+    margin-left: 30rpx;
+}
+
+.logs_name1 {
+    font-size: 35rpx;
+}
+
+.logs_imgright {
+    width: 20rpx;
+    height: 30rpx;
+}
+
+.logs_content {
+    width: 100%;
+    background-color: white;
+    display: flex;
+}
+
+button {
+    border-radius: 0rpx;
+}
+
+button::after {
+    border-radius: 0rpx;
+}
+
+.content_left {
+    width: 33.33%;
+    height: 120rpx;
+    border-right: 1rpx solid #d5d5d5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content_left1 {
+    color: #FF9900;
+}
+
+.content_integral {
+    font-size: 24rpx;
+}
+
+.content_font {
+    font-size: 42rpx;
+}
+
+.content_coll {
+    font-size: 22rpx;
+}
+
+.content_middle {
+    color: #FF5F3E;
+}
+
+.content_right {
+    color: #6AC20B;
+}
+
+.logs_order {
+    margin: 20rpx 0rpx;
+    background-color: white;
+    font-size: 30rpx;
+    color: #333;
+    padding: 0rpx 30rpx;
+    border-top: 1rpx solid #EEEEEE;
+    border-bottom: 1rpx solid #EEEEEE;
+}
+
+.logs_center {
+    height: 89rpx;
+    border-bottom: 1rpx solid #EEEEEE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.center_img {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.center_map {
+    width: 60rpx;
+    height: 60rpx;
+    margin-right: 25rpx;
+}
+
+.logs_centerimg {
+    display: flex;
+    align-items: center;
+}
+
+.logs_seller {
+    margin: 20rpx 0rpx;
+    background-color: white;
+    font-size: 28rpx;
+    color: #333;
+    padding: 0rpx 30rpx;
+    border-top: 1rpx solid #EEEEEE;
+    border-bottom: 1rpx solid #EEEEEE;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80rpx;
+}
+
+.footer_img {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.footer_text1 {
+    font-size: 36rpx;
+    color: #999;
+    margin-left: 10rpx;
+}
+
+.hykimg {
+    margin-top: 30rpx;
+    width: 100%;
+    height: 150rpx;
+}
+
+.hykimg image {
+    width: 100%;
+    height: 100%;
+}
+
+.cjhy {
+    margin-left: 20rpx;
+    font-size: 20rpx;
+    background: #1f0202da;
+    color: #FDE89C;
+    padding: 0rpx 10rpx;
+    border-radius: 10rpx;
+    width: 100rpx;
+}
+
+.cjhy image {
+    margin-right: 10rpx;
+    width: 25rpx;
+    height: 25rpx;
+}
+
+.foot{
+  color: #DBDBDB;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  box-sizing: border-box;
+}
+
+.morefunctions{
+  margin-top: 50rpx;
+  margin-bottom: 100rpx;
+  font-family: youyuan;
+  color: #DBDBDB;
+  /* color: 	#96CDCD; */
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  width: 100%;
+  height: 100%;
+}

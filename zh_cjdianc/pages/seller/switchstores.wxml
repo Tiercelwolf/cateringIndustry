@@ -1,0 +1,29 @@
+<view class="gif" wx:if="{{isloading}}">
+    <image src="../../img/hungry2.gif"></image>
+</view>
+
+<view>
+   <view class='changetop'>                  
+      <input style='border:2rpx solid {{color}}' placeholder='搜索门店'  name="input" bindblur='formName' ></input>
+      <button style='background:{{color}};color:#fff' type='submit' bindtap='searchstore'>搜索</button>
+   </view>
+
+       <view class="search_no" wx:if="{{store_list.length == 0}}">       
+         <view class='search_no2'>
+          <image src='../../img/plnull.png'></image>
+           <text>顾客大人，暂无该门店哦</text>
+         </view>
+      </view>
+  <view class="store-item" wx:for="{{store_list}}"  wx:for-index="idx" wx:key="idx">
+  <navigator open-type="reLaunch" bindtap='changemd' url="../seller/index?shopid={{item.shopid}}" hidden='{{hidden}}'>
+     <view class='top'>
+       <view class='top-left'>
+         <image src="{{item.logo}}"></image>
+       </view>
+       <view class='top-right'>
+         <view>{{item.name}}</view>
+       </view>
+     </view>
+  </navigator>
+   </view>
+</view>

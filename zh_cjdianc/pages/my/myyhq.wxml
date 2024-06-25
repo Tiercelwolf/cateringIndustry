@@ -1,0 +1,45 @@
+<view class="gif" wx:if="{{isloading}}">
+    <image src="../../img/jzdh(1).gif"></image>
+</view>
+
+<view wx:if="{{!isloading}}">
+<view class="main">
+    <block >
+        <view class="sjhb" wx:for="{{ptarr}}">
+            <view class="sjhbtop">
+                <view class="money">
+                    <view class="flex-grow-1 yhmoney">￥{{item.reduce}}</view>
+                    <view class="flex-grow-1 yhtj">满{{item.full}}可用</view>
+                </view>
+
+                <view >
+                    <view class="flex-grow-1 yhname">{{item.name}}</view>
+                    <view class="flex-grow-1 yhtj">有效期至：{{item.end_time}}</view>
+                    <view catchtap="kindToggle" data-id='{{item.id}}' class='rule'>
+                       使用规则
+                       <image class='select_img {{(open==item.id && !show)&&"select_img_rotate"}}' mode="aspectFit" src="../../img/down1.png"></image>
+                    </view>
+                </view>
+
+
+                <view class="sjhbbtm"  catchtap='qsy' data-id="{{item.id}}" data-uscoupid="{{item.uscoupid}}" data-full="{{item.full}}" data-reduce="{{item.reduce}}">
+                  <button style='background:{{color}};color:#fff' class='toUse'>去使用</button>
+               </view>
+            </view>
+
+            <view wx:if="{{open==item.id && !show}}" class='miaoshu'>
+                <view class="hyuan1"></view>
+                <view class="hyuan2"></view>              
+                <view class="flex-grow-1 sysm">
+                   <text>{{item.instruction}}</text>
+               </view>
+            </view>
+        </view>
+
+        <view class="list_imgbk2" wx:if="{{ptarr.length==0}}">
+            <image class="list_imgbk" src="../../img/list.png"></image>
+            <view class="list_imgbk3" style="margin-top:-10rpx;">您暂时还没有优惠券哦！</view>
+        </view>
+    </block>
+</view>
+</view>

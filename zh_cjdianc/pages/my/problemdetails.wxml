@@ -1,0 +1,17 @@
+<!--zh_cjdianc/pages/my/problemdetails.wxml-->
+<view class='title'>订单超时了怎么办？</view>
+
+<view class='detail'>
+  非常抱歉给您带来了不便，订单下单成功后骑手或商家会尽快为您配送，如订单出现超时，您可以按照以下方式处理：
+</view>
+
+<view class='detail'>
+  1.如订单下单后超30分钟未送达，请在详情页点击【催单】按钮进行催促
+  <!-- <image></image> -->
+</view>
+
+<view class='detail'>
+  2.如您的订单没有骑手配送信息，请您在订单详情页点击【联系商家】进行咨询配送进度
+  <!-- <image></image> -->
+</view>
+

@@ -1,0 +1,38 @@
+<!----------------头部 当前余额--------->
+<view class="head flex-col flex-x-center flex-y-center"><!---wuBaseWxss 7.wxss中---->
+    <view>当前余额（元）</view>
+    <view>{{wallet}}</view>
+</view>
+
+<!-----------------中间---------------->
+<view class="yecz">
+   
+    <view>-余额充值-</view>
+    <!---------输入框：其他金额，充值立享优惠---------->
+    <view class="hbcells">
+        <view bindtap="tabClick1" class="hbcell" style="border:2rpx solid {{activeIndex==-1?color:'#E1E1E1'}};padding:0 20rpx;">
+            <input bindinput="bindinput" maxlength="6" placeholder="请输入充值金额" placeholderStyle="font-size:24rpx;color:#333;" type="digit"></input><!--type="digit"小数点的数字键盘--->
+        </view>
+    </view>
+
+</view>
+
+<!----------充值服务协议---------->
+ <view class="read">
+    <radio color="{{color}}" style="transform:scale(0.8);" wx:for-items="{{items}}" checked="{{item.checked}}" data-index="index" bindtap="click"></radio>
+    <!--checked="true"已选中，color="{{color}}"找不到，颜色变成充值服务协议一样；transform:scale(0.8)水平垂直方向同时缩放80%-->
+    <view>
+      阅读并同意以下
+      <text bindtap="lookck" class="readfont" style="color:{{color}}">《充值服务协议》</text>
+      <!--style="color:{{color}}"行内元素，优先显示；class="readfont"外部样式--->
+    </view>
+</view>
+
+<!----------底部按钮---------->
+<form bindreset="formReset" bindsubmit="tjddformSubmit" reportSubmit="true">
+<!--bindreset表单重置时会触发reset事件;bindsubmit携带 form 中的数据触发submit事件;reportSubmit="true"返回formId用于发送模板消息-->
+    <view class="weui-btn-area">
+        <button class="weui-btn" formType="submit" style="background:{{color}};color:#fff;">立即充值{{czmoney}}元</button>
+        <!---formType用于<form/>组件，点击分别会触发<form/>组件的submit/reset 事件--->
+    </view>
+</form>

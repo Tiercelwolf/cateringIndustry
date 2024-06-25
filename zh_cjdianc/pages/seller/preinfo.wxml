@@ -1,0 +1,106 @@
+<!-- 预约信息 -->
+<form bindsubmit="formSubmit" bindreset="formReset">
+<scroll-view scroll-y style='height:{{scroll_height}}rpx'>
+  <view style=' border-left: 20rpx solid {{color}};' class='one'>预约信息</view>
+
+  <!-- 选择座位 -->
+   <view class='two'>
+       <view>选择座位</view>
+       <picker bindchange="bindzuoweiChange" value="{{jindex}}" range="{{jarray}}">{{jarray[jindex]}}></picker>
+   </view>
+   
+  <!-- 日期 -->
+    <view class='two'>
+        <view>选择日期</view>        
+          <picker mode="date" start="{{date}}" name="date" end="" value="{{date}}" bindchange='bindDateChange'>
+            <view>{{date}}></view>
+          </picker>       
+    </view>
+
+<!-- 到店时间 -->
+    <view class='two'>
+        <view>选择到店时间</view>
+        <picker mode="time" value='{{time}}'  name="time" start="{{time}}" bindchange='bindTimeChange'>
+          <view>{{time}}></view>
+        </picker>
+      </view>
+
+  <!-- 人数 -->
+  <view class='two'>
+     <view>选择人数</view>
+     <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">{{array[index]}}></picker>
+  </view>
+
+  <!-- 联系人 -->
+  <view class='two'>
+      <view>联系人:</view>
+      <input  name='username' bindinput='lxr' placeholder='请输入联系人' value='{{username}}'></input>
+      <!-- 性别的选择 -->
+      <radio-group bindchange="radioChange" class="radio-group">
+          <label class="radio" wx:for="{{items}}">
+              <radio checked="{{item.checked}}" color="{{color}}" value="{{item.value}}"></radio>{{item.name}}
+          </label>
+      </radio-group>
+            
+  </view> 
+
+<!-- 联系电话 -->
+  <view class='three' style='margin-bottom:40rpx;'>
+      <view style='margin-right:20rpx;'>联系电话:</view>
+      <input name='iphone' bindinput='iphone' placeholder='请输入电话号码' value='{{iphone}}'  type="number"></input>
+  </view>
+
+  <view class='two' catchtap='select1'>
+      <view>只订座</view>
+      <icon color='{{color}}' size="18" type="success_no_circle" wx:if="{{selectone==1}}"></icon>
+  </view>
+
+  <view class='two' catchtap='select2' style='margin-bottom:40rpx;'>
+      <view>提前选商品</view>
+      <icon color='{{color}}' size="18" type="success_no_circle" wx:if="{{selectone==2}}"></icon>
+  </view>
+
+<!-- 是否显示 -->
+  <view wx:if="{{selectone==2}}" style='margin-bottom:40rpx;'>
+      <view class='three' wx:if="{{carinfo.length != 0}}">
+         <view>商品列表（可前往“购物车”删除商品）</view>
+      </view>
+
+      <view class='two' wx:for="{{carinfo}}">
+          <image style='padding-top:10rpx;' src='{{item.img}}'></image>
+          <view>{{item.price}}元*{{item.num}}</view>
+      </view>
+
+      <view class='two' wx:if="{{carinfo.length != 0}}">
+        <text>合计</text>
+        <text>{{price}}</text>
+      </view>
+
+      <view class='two1' wx:if="{{getIntegral != 0}}">
+        <text>预计获得积分</text>
+        <text>{{getIntegral}}分</text>
+      </view>
+
+      <view class='two' catchtap='goshowGoods'>
+            <view>前往选择商品</view>
+            <text>></text>
+      </view>
+
+  </view>
+  <!-- 是否显示 -->
+  <view class='textarea' style='margin-bottom:170rpx;'>
+      <view>备注</view>
+      <textarea name="beizhu" bindinput='beizhu' data-index="{{index}}" placeholder="请输入备注信息" value='{{beizhu}}'></textarea>
+  </view>
+  
+  <view>
+  </view>
+  </scroll-view>
+
+   <button type='primary' formType="submit" style="background:{{color}};color:#fff" catchtap='canvas'>立即预约</button>
+</form>
+
+
+
+
+

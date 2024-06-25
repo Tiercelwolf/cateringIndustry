@@ -1,0 +1,80 @@
+<view class = "gif"  wx:if = "{{isloading}}" >
+    <image src = "../../img/hungry2.gif"></image>
+</view>
+
+<view wx:if = "{{!isloading}}">
+<scroll-view scroll-y style='height:{{scroll_height}}rpx'>
+
+<swiper class = "context" autoplay = 'true' indicator-dots = "true" circular = 'true'>
+      <swiper-item wx:for = "{{info.banner}}">
+          <image src = '{{item}}' catchtap = 'preimg' data-index = '{{index}}'></image>
+      </swiper-item>
+</swiper>
+
+<view class = 'two'>
+  <view class = 'top'>
+    <view class = 'left' >
+      <view>{{info.name}}</view>
+      <view style = "color:{{color}}">￥{{info.price}}</view>
+    </view>
+
+    <!-- 收藏 -->
+    <view class='right' >
+        <view> 
+          <view class='temp'>
+              <image class = 'save' src = "{{isClick == '1' ? '../../img/full-star.png':'../../img/no-star.png'}}" data-goodsid = "{{goodsid}}" data-isclick = "{{isClick}}" bindtap = "haveSave"></image>    
+          </view>
+          <text class = "saveText">{{isClick == "1" ?'已收藏':'收藏商品'}}</text>
+        </view>
+    </view>
+  </view>
+  <view>销量{{info.numnumber}}笔</view>
+</view>
+<view class = 'zhuangyuanfandian'>
+<navigator url = '../seller/index'>
+<view>由 <text style = "color:{{color}}">{{info.sjname}}</text> 为你提供</view>
+</navigator> 
+<view>></view>
+</view>
+
+<!-- 商品详情 -->
+<view style='margin-bottom:150rpx;'>
+<view class = 'final'>
+  <view bindtap = "tabClick" class = "list_title {{activeIndex == index?'selsect':'default'}}" id = "{{index}}" wx:for = "{{tabs}}">
+      <view>{{item}}</view>
+      <view class = "list_border" hidden = "{{activeIndex!=index}}"></view>
+  </view>
+</view>
+
+ <block wx:if = "{{activeIndex==0}}">
+    <view wx:for-items = "{{info.detailImg}}">
+       <image class = 'image' src = "{{item}}"></image> 
+       <view>{{info.miaoshu}}</view>
+    </view>  
+</block>
+</view>
+</scroll-view>
+
+<!-- 底部 -->
+<view class = 'float' wx:if="{{preinfo != '1'}}">
+  <view>
+    <button open-type = 'share' plain = "true" hover-class = "none" size = 'mini' style = 'margin-top:20rpx'>
+      <i class = "iconfont icon-icon_share"></i>
+      <view style = 'font-size:20rpx;margin-top:-10rpx;margin-bottom:6rpx;'>分享</view>
+    </button>
+  </view>
+
+  <view catchtap = 'gocar'>
+    <view style = 'display: flex;justify-content:center;align-items: center;'>
+      <i class = "iconfont icon-daohanggouwuche" style = "font-size:20px;"></i>
+    </view>
+    <view style = 'font-size:20rpx;'>购物车</view>
+  </view>
+
+  <view class = 'right' style = 'border:1rpx solid {{color}};'>
+    <view catchtap = 'jiacar' style = 'background:{{color}};color:#fff'>加入购物车</view>
+    <view catchtap = 'gobuy' style = 'color:{{color}}'>立即购买</view>
+  </view>
+</view>
+</view>
+

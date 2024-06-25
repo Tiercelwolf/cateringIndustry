@@ -1,0 +1,34 @@
+
+<view class="body">
+
+  <view class="top" style='border:1rpx solid {{color}}'>退款金额<text style="color:red;padding-left:25rpx;">{{Refundamount}}元</text></view>
+  <view class="center" style='border:1rpx solid {{color}}'>
+     <view class="cen-1" style='border-bottom: 1rpx solid {{color}};'>退款流程</view>
+     <view class='c-top' wx:if="{{lastrsn != 2 }}" >
+        <view class='c-t-left'>
+            <image src='../../img/weixin.png'></image>            
+        </view>
+
+        <view class='c-t-right'>
+           <view style="font-size: 34rpx;color: #000;">退款申请已提交</view>
+           <view class="">提交退款申请</view>
+           <view>{{Timesubmission}}</view>
+        </view>
+
+     </view>
+
+     <view class='c-buttom' wx:if="{{status==3 }}" hidden="{{hidden}}" >
+       <view class='c-b-left'>       
+         <view wx:if="{{lastrsn != 2}}" style='border-left: 1rpx solid {{color}};height: 90rpx;margin-left:50rpx;margin-bottom:50rpx;'></view>
+            <image src='../../img/weixin.png' style='margin-left:37rpx;'></image>
+       </view>
+
+       <view class='c-b-right'>
+         <view style="font-size: 34rpx;color: #000;">处理完成</view>
+         <view >完成退款申请</view>
+         <view>{{Completiontime}}</view>
+       </view>
+     </view>
+  </view>
+  <view class="buttom">客服电话:1010--5335</view>
+</view>

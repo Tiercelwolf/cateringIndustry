@@ -1,0 +1,69 @@
+<view class="goods-list">
+    <view class="goods-item">
+        <view class="flex-row flex-y-center score-row" style="padding:20rpx 30rpx;">
+            <image class="goods-pic" src="{{orderinfo.store.logo}}"></image>
+            <view style="margin-left:30rpx;">{{orderinfo.store.name}}</view>
+        </view>
+
+        <view class="pjxx">
+             <view bindtap="starTap" data-index="{{index}}"  class="star" wx:for="{{userStars}}" wx:key="index">
+                <image src="{{item}}"></image>
+             </view>
+             <text class='rtxt'>{{wjxScore}}.0分</text>
+        </view>
+
+        <view class="banner">
+            <view class="pjnr">
+                <textarea bindblur="contentInput" data-index="{{index}}" maxlength="100" placeholder="要评价的内容..." placeholderStyle="color:#999;"></textarea>
+            </view>
+            <view style="display: flex;flex-direction: row;"> 
+               <view class="xxk1" wx:if="{{!sctp}}">
+               <view>
+                 <image class="sctp" bindtap="sctp" src="../../img/sctp.png" ></image>
+                 <text style=" display:flex;flex-direction:row;">上传图片</text>
+               </view>
+              </view>
+              <!-- <view class="jf">三张图片有机会赢取<text style="color:#ffbb89">100</text>积分</view> -->
+        </view>
+
+            <view class="mdtp1" wx:if="{{scsp}}">
+                <view class="weui-uploader__bd">
+                    <view class="weui-uploader__files" id="uploaderFiles">
+                        <view class="weui-uploader__file" wx:for="{{videos}}">
+                            <view bindtap="deleteVideo" class="x" data-index="{{index}}">
+                                <image src="../../img/close.png"></image>
+                            </view>
+                            <image bindtap="previewVideo" class="weui-uploader__img" mode="aspectFill" src="{{item}}"></image>
+                        </view>
+                    </view>
+                    <view class="weui-uploader__input-box" wx:if="{{video.length<3}}">
+                        <view bindtap="chooseVideo" class="weui-uploader__input"></view>
+                    </view>
+                </view>
+                <view class="tpsl">{{videos.length}}/3</view>
+            </view>
+      
+            <view class="mdtp1" wx:if="{{sctp}}">
+                <view class="weui-uploader__bd">
+                    <view class="weui-uploader__files" id="uploaderFiles">
+                        <view class="weui-uploader__file" wx:for="{{images}}">
+                            <view bindtap="deleteImage" class="x" data-index="{{index}}">
+                                <image src="../../img/close.png"></image>
+                            </view>
+                            <image bindtap="previewImage" class="weui-uploader__img" mode="aspectFill" src="{{item}}"></image>
+                        </view>
+                    </view>
+                    <view class="weui-uploader__input-box" wx:if="{{images.length<3}}">
+                        <view bindtap="chooseImage" class="weui-uploader__input"></view>
+                    </view>
+                </view>
+                <view class="tpsl">{{images.length}}/3</view>
+            </view>
+        </view>
+    </view>
+</view> 
+
+<view class="weui-btn-area">
+    <button bindtap="commentSubmit" class="weui-btn" style="background:{{color}};font-size:35rpx;" type="primary">提交评论</button>
+    <paypopup id="paypopup"></paypopup>
+</view>

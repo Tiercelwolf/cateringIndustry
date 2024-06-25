@@ -1,0 +1,268 @@
+page {
+  background: #F5F5F5;
+  display: flex;  
+  flex-direction: column;  
+  height: 100%;  
+}
+
+.no_coupons {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.noe_coupons_img {
+    width: 300rpx;
+    height: 300rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #999;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.noe_coupons_img image {
+    width: 100%;
+    height: 100%;
+}
+
+.integral {
+    background: #fff;
+    padding: 30rpx;
+    box-sizing: border-box;
+    width: 100%;
+    font-family: 微软雅黑;
+    margin: 0 auto 0;
+    font-size: 30rpx;
+    color: #333;
+    border-bottom: 1rpx solid #e5e5e5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.integral-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.integral-left view {
+    height: 40rpx;
+}
+
+.integral-left view:nth-child(1) {
+    color: #333;
+}
+
+.integral-left view:nth-child(2) {
+    margin-top: 5rpx;
+    color: #999;
+    font-size: 25rpx;
+}
+
+.integral-right {
+    font-weight: bold;
+    font-size: 40rpx;
+}
+
+.integral-right1 {
+    font-weight: 100;
+    font-size: 26rpx;
+    margin-left: 5rpx;
+}
+
+.mygd {
+    font-size: 28rpx;
+    color: #666;
+    text-align: center;
+    padding: 15rpx;
+    background: #fff;
+}
+
+.nav-1{
+  flex: none;  
+  display: flex;   
+  background: #fff;  
+  background-color:#009ACD;
+  height: 80rpx;
+  justify-content: space-around;
+}
+
+.nav-1 .wrapBar {
+  display: flex;
+}
+
+.nav-1 .item{  
+  position: relative;   
+  text-align: center;  
+  font-size: 35rpx;
+  line-height: 80rpx;  
+  color: black;
+  display: inline-block;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}  
+
+.nav-1 .item.active{  
+  color: white;
+}  
+
+.nav-1 .item.active:after{  
+  content: "";  
+  display: block; 
+  position: absolute;  
+  bottom: 0;  
+  left: 0;  
+  right: 0; 
+  height: 4rpx;  
+  background: white;  
+}  
+
+
+button {
+  background: transparent;
+}
+
+button::after {
+  border: 0;
+}
+
+.navbarBtn {
+  flex: 0 0 15%;
+}
+
+.navbarBtn.icon {
+  transform: rotate(90deg);
+  width: 20rpx;
+  height: 40rpx;
+}
+
+.navbarBtn.icon.active{
+  transform: rotate(-90deg);
+}
+
+.blankblock {
+  flex: 0 0 10%;
+}
+
+.nav-1-left {
+  white-space: nowrap;
+  flex: 0 0 85%;
+}
+
+.item.left2Font {
+  color: black;
+}
+
+.spitLine {
+  margin: 0;
+  height: 2rpx;
+  background-color: gray;
+}
+
+.picker-contain {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.picker-contain-bg {
+  position: fixed;
+  background-color: black;
+  transition: all 1s;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  top: 0;
+  opacity: 0
+}
+
+.picker-contain-bg.show {
+  opacity: 0.5;
+}
+
+.picker-contain .item {
+  background-color: RGB(215, 215, 215);
+  border-radius:20px;
+  margin: 20rpx;
+  padding: 50rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  font-size: 30rpx;
+  color: RGB(161, 161, 161);
+}
+
+.picker-contain .item.active{  
+  color: black;
+  background-color: RGB(153, 153, 153);
+} 
+
+swiper-item scroll-view {
+  display: inline;
+}
+
+swiper.itemContainer{
+  height: 1136rpx;
+  display: flex;
+}
+
+/* ----------------弹窗------------------------- */
+.big{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 12000;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.0);
+  transition: background-color 500ms;
+}
+
+.small{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 20001;
+  width: 100%;
+  height: 50vh;
+  background-color: white;
+}
+
+.big .active{
+  background-color: rgba(0,0,0,.6);
+}
+
+.small .slidedown{
+  animation: slidedown 0.5s linear;
+}
+
+.son .slideup{
+  animation: slideup 0.5s linear;
+}
+
+@keyframes slidedown{
+  from{
+    transform: translateY(0);
+  }to{
+    transform: translateY(100%);
+  }
+}
+
+@keyframes slideup{
+  from{
+    transform: translateY(100%);
+  }to{
+    transform: translateY(0);
+  }
+}
+
+.center_img {
+    width: 30rpx;
+    height: 30rpx;
+}

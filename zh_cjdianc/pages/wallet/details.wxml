@@ -1,0 +1,28 @@
+<view>
+  <view class="integral">
+    <view>支付金额</view>
+    <view>{{money}}</view>
+  </view>
+
+  <view class="integral">
+    <view>支付状态</view>
+    <view wx:if="{{type==1}}">支付成功</view>
+    <view wx:if="{{type==2}}">支付失败</view>
+  </view>
+
+  <view class="integral">
+    <view>支付方式</view>
+    <view wx:if="{{order_type==1}}">微信支付</view>
+    <view wx:if="{{order_type==3}}">钱包支付</view>
+  </view>
+
+  <view class="integral">
+    <view>支付创建时间</view>
+    <view>{{time}}</view>
+  </view>
+
+  <view class="integral">
+    <view>订单号</view>
+    <view>{{order_num}}</view>
+  </view>
+</view>
